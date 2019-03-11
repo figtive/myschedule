@@ -9,18 +9,14 @@ class Test(unittest.TestCase):
     meetingB = Meeting(Day.MONDAY, 9, 11)
     self.assertTrue(meetingA.clashWith(meetingB))
     self.assertTrue(meetingB.clashWith(meetingA))
-    
-    meetingC = Meeting(Day.MONDAY, 8, 9)
-    meetingD = Meeting(Day.MONDAY, 8, 10)
-    self.assertTrue(meetingC.clashWith(meetingD))
-    self.assertTrue(meetingD.clashWith(meetingC))
 
   def test_non_clashing_meetings(self):
     meetingA = Meeting(Day.MONDAY, 8, 10)
     meetingB = Meeting(Day.MONDAY, 10, 12)
     self.assertFalse(meetingA.clashWith(meetingB))
     self.assertFalse(meetingB.clashWith(meetingA))
-
+    
+  def test_non_clashing_meetings_2(self):
     meetingC = Meeting(Day.MONDAY, 8, 10)
     meetingD = Meeting(Day.THURSDAY, 8, 10)
     self.assertFalse(meetingC.clashWith(meetingD))
