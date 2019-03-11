@@ -1,6 +1,36 @@
 from enum import Enum
 
+class CsvCourseReader:
+  def create_courses_from(csv_file_path):
+    '''
+    read data from a csv file, create courses and 
+    return a dictionary of course name to list of course classes 
+
+    example: 
+    ddp2a = Course('DDP2', 'A', 'Drs. Lim Yohanes Stefanus M.Math., Ph.D', '4')
+    ddp2a.addMeeting(Day.MONDAY, Time('16:00'), Time('17.40'))
+    ddp2a.addMeeting(...) # until all class session is included
+
+    ddp2b = Course('DDP2', 'B', 'Dr. Fariz Darari', '4')
+    ddp2b.addMeeting(...) # until all class session is included
+
+    dictionary_returned = {'DDP2': [ddp2a, ddp2b, ...], 'Anum': [..., ...]}
+    '''
+
+    if not (isinstance(csv_file_path, str)):
+      raise ValueError('argument csv_file_path must be string')
+
+    # TODO
+    file_pointer = open(csv_file_path, 'r')
+    course_name_to_available_courses = {'DDP2': []}
+
+    return course_name_to_available_courses
+
 class Course:
+  '''
+  represents a class of a course
+  example: class DDP2 A of 'DDP2'
+  '''
   def __init__(self, name, code, lecturer, credit):
     self.name = name
     self.code = code
@@ -46,7 +76,7 @@ class Meeting:
   
 class Day(Enum):
   '''
-  represents what day a meeting is held
+  represents what day a class session is held
   '''
   MONDAY = 1
   TUESDAY = 2
@@ -57,7 +87,7 @@ class Day(Enum):
 
 class Time:
   '''
-  represents time in hour and minute
+  represents time in hour and minute, allows for comparison of Time objects
   example: 08:00
   '''
 
