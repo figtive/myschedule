@@ -1,24 +1,24 @@
 import unittest
 
 from backtracking import Backtracking
-from course import Course, Meeting, Day
+from course import Course, Meeting, Day, Time
 
 class Test(unittest.TestCase):
   def test_clashing_meetings(self):
-    meetingA = Meeting(Day.MONDAY, 8, 10)
-    meetingB = Meeting(Day.MONDAY, 9, 11)
+    meetingA = Meeting(Day.MONDAY, Time('08:00'), Time('09:40'))
+    meetingB = Meeting(Day.MONDAY, Time('09:00'), Time('10:40'))
     self.assertTrue(meetingA.clashWith(meetingB))
     self.assertTrue(meetingB.clashWith(meetingA))
 
   def test_non_clashing_meetings(self):
-    meetingA = Meeting(Day.MONDAY, 8, 10)
-    meetingB = Meeting(Day.MONDAY, 10, 12)
+    meetingA = Meeting(Day.MONDAY, Time('08:00'), Time('09:40'))
+    meetingB = Meeting(Day.MONDAY, Time('10:00'), Time('11:40'))
     self.assertFalse(meetingA.clashWith(meetingB))
     self.assertFalse(meetingB.clashWith(meetingA))
     
   def test_non_clashing_meetings_2(self):
-    meetingC = Meeting(Day.MONDAY, 8, 10)
-    meetingD = Meeting(Day.THURSDAY, 8, 10)
+    meetingC = Meeting(Day.MONDAY, Time('08:00'), Time('08:50'))
+    meetingD = Meeting(Day.THURSDAY, Time('08:00'), Time('09:40'))
     self.assertFalse(meetingC.clashWith(meetingD))
     self.assertFalse(meetingD.clashWith(meetingC))
 
