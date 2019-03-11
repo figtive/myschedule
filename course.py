@@ -1,9 +1,10 @@
 from enum import Enum
 
 class Course:
-  def __init__(self, name, class_code, credit):
+  def __init__(self, name, code, lecturer, credit):
     self.name = name
-    self.class_code = class_code
+    self.code = code
+    self.lecturer = lecturer
     self.credit = credit
     self.meetings = []
   
@@ -20,6 +21,10 @@ class Course:
     return False
     
 class Meeting:
+  '''
+  represents one class session in a course
+  example: IS class on Monday 13.00 - 14.40
+  '''
   def __init__(self, day, start, end):
     self.day = day
     self.start = start
@@ -43,3 +48,4 @@ class Day(Enum):
   WEDNESDAY = 3
   THURSDAY = 4
   FRIDAY = 5
+  SATURDAY = 6
