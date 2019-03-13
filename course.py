@@ -1,30 +1,50 @@
 from enum import Enum
+import json
+import rhinoscriptsyntax as rs
 
-class CsvCourseReader:
-  def create_courses_from(csv_file_path):
-    '''
-    read data from a csv file, create courses and 
-    return a dictionary of course name to list of course classes 
 
-    example: 
-    ddp2a = Course('DDP2', 'A', 'Drs. Lim Yohanes Stefanus M.Math., Ph.D', '4')
-    ddp2a.addMeeting(Day.MONDAY, Time('16:00'), Time('17.40'))
-    ddp2a.addMeeting(...) # until all class session is included
 
-    ddp2b = Course('DDP2', 'B', 'Dr. Fariz Darari', '4')
-    ddp2b.addMeeting(...) # until all class session is included
+#prompt the user for a file to import
+filter = "JSON file (*.json)|*.json|All Files (*.*)|*.*||"
+filename = rs.OpenFileName("Open JSON File", filter)
 
-    dictionary_returned = {'DDP2': [ddp2a, ddp2b, ...], 'Anum': [..., ...]}
-    '''
+#Read JSON data into the datastore variable
+if filename:
+    with open(filename, 'r') as f:
+        datastore = json.load(f)
 
-    if not (isinstance(csv_file_path, str)):
-      raise ValueError('argument csv_file_path must be string')
+#Use the new datastore datastructure
+print datastore["day"]["start"]["end"]
 
-    # TODO
-    file_pointer = open(csv_file_path, 'r')
-    course_name_to_available_courses = {'DDP2': []}
 
-    return course_name_to_available_courses
+# with open("data.json", "w") as write_file:
+#    json.dump(data, write_file) 
+
+# class CsvCourseReader:
+  # def create_courses_from(csv_file_path):
+    # '''
+    # read data from a csv file, create courses and 
+    # return a dictionary of course name to list of course classes 
+
+    # example: 
+    # ddp2a = Course('DDP2', 'A', 'Drs. Lim Yohanes Stefanus M.Math., Ph.D', '4')
+    # ddp2a.addMeeting(Day.MONDAY, Time('16:00'), Time('17.40'))
+    # ddp2a.addMeeting(...) # until all class session is included
+
+    # ddp2b = Course('DDP2', 'B', 'Dr. Fariz Darari', '4')
+    # ddp2b.addMeeting(...) # until all class session is included
+
+    # dictionary_returned = {'DDP2': [ddp2a, ddp2b, ...], 'Anum': [..., ...]}
+    # '''
+
+    # if not (isinstance(csv_file_path, str)):
+      # raise ValueError('argument csv_file_path must be string')
+
+    # # TODO
+    # file_pointer = open(csv_file_path, 'r')
+    # course_name_to_available_courses = {'DDP2': []}
+
+    # return course_name_to_available_courses
 
 class Course:
   '''
