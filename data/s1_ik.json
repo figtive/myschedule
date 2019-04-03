@@ -1,0 +1,1892 @@
+{
+    "courses": [
+        {
+            "course_code": "CSCM603217",
+            "course_name": "Analisis Numerik",
+            "sks": 3,
+            "term": 6,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602012",
+                    "course_name": "Aljabar Linier"
+                },
+                {
+                    "course_code": "CSCM602115",
+                    "course_name": "Matematika Dasar 2"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Anum - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2306"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "2.2306"
+                        }
+                    ],
+                    "lecturer": [
+                        "Raja Oktovin Parhasian Damanik S.Kom., M.Sc.",
+                        "Prof. Drs. T. Basaruddin M.Sc., Ph.D"
+                    ]
+                },
+                {
+                    "name": "Kelas Anum - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "2.2404"
+                        }
+                    ],
+                    "lecturer": [
+                        "Raja Oktovin Parhasian Damanik S.Kom., M.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas Anum - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2405"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "2.2405"
+                        }
+                    ],
+                    "lecturer": [
+                        "Prof. Drs. Heru Suhartanto M.Sc., Ph.D"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE602070",
+            "course_name": "Basis Data",
+            "sks": 4,
+            "term": 4,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601021",
+                    "course_name": "Dasar-dasar Pemrograman 2"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Basis Data - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2404"
+                        }
+                    ],
+                    "lecturer": [
+                        "Meganingrum Arista Jiwanggi S.Kom., M.Kom., M.Com.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas Basis Data - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2405"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2405"
+                        }
+                    ],
+                    "lecturer": [
+                        "Suci Fadhilah S.Kom., M.A."
+                    ]
+                },
+                {
+                    "name": "Kelas Basis Data - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2406"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2406"
+                        }
+                    ],
+                    "lecturer": [
+                        "Yova Ruldeviyani S.Kom., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas Basis Data - D",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2404"
+                        }
+                    ],
+                    "lecturer": [
+                        "Fatimah Azzahro S.Kom, M.Kom, M.Sc.",
+                        "Meganingrum Arista Jiwanggi S.Kom., M.Kom., M.Com.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas Basis Data - E",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2405"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2405"
+                        }
+                    ],
+                    "lecturer": [
+                        "Iis Solichah S.Kom., M.Kom., M.C.S.",
+                        "Iis Afriyanti S.Kom, M.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE601020",
+            "course_name": "Dasar-dasar Pemrograman 1",
+            "sks": 4,
+            "term": 1,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas DDP 1",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Selasa",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1106"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "Lab.2.2601"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ardhi Putra Pratama Hartono S.Kom, M.Sc",
+                        "Ari Saptawijaya S.Kom., M.Sc., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE601021",
+            "course_name": "Dasar-dasar Pemrograman 2",
+            "sks": 4,
+            "term": 2,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601020",
+                    "course_name": "Dasar-dasar Pemrograman 1"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas DDP 2 - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "A1.03 (Ged Baru)"
+                        },
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.08 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.08 (Ged Baru)"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab A1.04 (Ged baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Drs. Lim Yohanes Stefanus M.Math., Ph.D"
+                    ]
+                },
+                {
+                    "name": "Kelas DDP 2 - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.09 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.09 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1101/1103"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Fariz Darari",
+                        "Laksmita Rahadianti S.Kom., M.Sc., Ph.D."
+                    ]
+                },
+                {
+                    "name": "Kelas DDP 2 - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.07 (Ged baru)"
+                        },
+                        {
+                            "day": "Selasa",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1101/1103"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.07 (Ged baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Fariz Darari",
+                        "Laksmita Rahadianti S.Kom., M.Sc., Ph.D."
+                    ]
+                },
+                {
+                    "name": "Kelas DDP 2 - D",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.07 (Ged baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.07 (Ged baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1107/1109"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ardhi Putra Pratama Hartono S.Kom, M.Sc"
+                    ]
+                },
+                {
+                    "name": "Kelas DDP 2 - E",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.08 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.08 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.2.2601"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dipta Tanaya S.Kom, M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas DDP 2 - F",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.09 (Ged Baru)"
+                        },
+                        {
+                            "day": "Selasa",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1107/1109"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.09 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Raja Oktovin Parhasian Damanik S.Kom., M.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM603234",
+            "course_name": "Data Science & Analytics",
+            "sks": 3,
+            "term": 6,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602070",
+                    "course_name": "Basis Data"
+                },
+                {
+                    "course_code": "CSGE602013",
+                    "course_name": "Statistika & Probabilitas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas DSA - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "3.3114"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "3.3114"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Eng. Mohamad Ivan Fanany S.Si., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas DSA - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "2.2304"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ari Wibisono S.Kom, M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas DSA - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "3.3113"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "3.3113"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ari Wibisono S.Kom, M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM604142",
+            "course_name": "Desain & Analisis Algoritma",
+            "sks": 4,
+            "term": 7,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602040",
+                    "course_name": "Struktur Data & Algoritma"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas DAA",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "3.3114"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "3.3114"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Drs. R. Yugo Kartono Isal M.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604241",
+            "course_name": "Grafika Komputer",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602040",
+                    "course_name": "Struktur Data & Algoritma"
+                },
+                {
+                    "course_code": "CSGE602012",
+                    "course_name": "Aljabar Linier"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Grafika Komputer",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Kamis",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "2.2406"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2406"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dadan Hardianto S.Kom., M.Kom"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM603154",
+            "course_name": "Jaringan Komputer",
+            "sks": 4,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602055",
+                    "course_name": "Sistem Operasi"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Jarkom",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2502"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2502"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ir. Adhi Yuniarto Laurentius Yohannes M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE614093",
+            "course_name": "Komputer & Masyarakat",
+            "sks": 3,
+            "term": 8,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas Komas - A",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "2.2304"
+                        }
+                    ],
+                    "lecturer": [
+                        "Drs. Widijanto Satyo Nugroho M.Math., Ph.D."
+                    ]
+                },
+                {
+                    "name": "Kelas Komas - B",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "2.2304"
+                        }
+                    ],
+                    "lecturer": [
+                        "Drs. Widijanto Satyo Nugroho M.Math., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604243",
+            "course_name": "Kriptografi & Keamanan Informasi",
+            "sks": 4,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601010",
+                    "course_name": "Matematika Diskret 1"
+                },
+                {
+                    "course_code": "CSGE601011",
+                    "course_name": "Matematika Diskret 2"
+                },
+                {
+                    "course_code": "CSGE602013",
+                    "course_name": "Statistika & Probabilitas"
+                },
+                {
+                    "course_code": "CSCM603154",
+                    "course_name": "Jaringan Komputer"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Kriptografi",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2502"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2502"
+                        }
+                    ],
+                    "lecturer": [
+                        "Amril Syalim S.Kom., M.Eng., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604271",
+            "course_name": "Layanan & Aplikasi Web",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602022",
+                    "course_name": "Perancangan & Pemrograman Web"
+                },
+                {
+                    "course_code": "CSCM603154",
+                    "course_name": "Jaringan Komputer"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas LAW",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2604"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "A1.03 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Gladhi Guarddin S.Kom., M. Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604144",
+            "course_name": "Logika Komputasional",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSCM603130",
+                    "course_name": "Sistem Cerdas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Logika Komputasional",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2304"
+                        }
+                    ],
+                    "lecturer": [
+                        "Drs. Lim Yohanes Stefanus M.Math., Ph.D"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE601011",
+            "course_name": "Matematika Diskret 2",
+            "sks": 3,
+            "term": 2,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas MD 2 - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "A2.09 (Ged Baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.09 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Prof. Dra. Belawati H. Widjaja M.Sc., Ph.D."
+                    ]
+                },
+                {
+                    "name": "Kelas MD 2 - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Adila Alfa Krisnadhi S.Kom., M.Sc"
+                    ]
+                },
+                {
+                    "name": "Kelas MD 2 - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.09 (Ged Baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "A2.09 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Prof. Dra. Belawati H. Widjaja M.Sc., Ph.D."
+                    ]
+                },
+                {
+                    "name": "Kelas MD 2 - D",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.08 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "A1.03 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Kurniawati Azizah S.T., M.Phil."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604235",
+            "course_name": "Pemelajaran Mesin",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSCM603130",
+                    "course_name": "Sistem Cerdas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Pemelajaran Mesin-A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2302"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "2.2302"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Eng. Mohamad Ivan Fanany S.Si., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas Pemelajaran Mesin-B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "2.2304"
+                        }
+                    ],
+                    "lecturer": [
+                        "Adila Alfa Krisnadhi S.Kom., M.Sc"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM602023",
+            "course_name": "Pemrograman Lanjut",
+            "sks": 4,
+            "term": 4,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601021",
+                    "course_name": "Dasar-dasar Pemrograman 2"
+                },
+                {
+                    "course_code": "CSGE602022",
+                    "course_name": "Perancangan & Pemrograman Web"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Advanced Program - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1101/1103"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1101/1103"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1101/1103"
+                        }
+                    ],
+                    "lecturer": [
+                        "Muhammad Anwar Ma'sum S.Kom., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas Advanced Program - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1107/1109"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2402"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2402"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1107/1109"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1107/1109"
+                        }
+                    ],
+                    "lecturer": [
+                        "Hafiyyan Sayyid Fadhlillah S.Kom., M.Kom"
+                    ]
+                },
+                {
+                    "name": "Kelas Advanced Program - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2602"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2602"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.2.2601"
+                        }
+                    ],
+                    "lecturer": [
+                        "Hafiyyan Sayyid Fadhlillah S.Kom., M.Kom",
+                        "Muhammad Anwar Ma'sum S.Kom., M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604222",
+            "course_name": "Pemrograman Logika",
+            "sks": 4,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601020",
+                    "course_name": "Dasar-dasar Pemrograman 1"
+                },
+                {
+                    "course_code": "CSGE601010",
+                    "course_name": "Matematika Diskret 1"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Pemrograman Logika",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "3.3113"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "3.3113"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "Lab.1106"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "Lab.2.2601"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ari Saptawijaya S.Kom., M.Sc., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604129",
+            "course_name": "Pemrograman Paralel",
+            "sks": 4,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601021",
+                    "course_name": "Dasar-dasar Pemrograman 2"
+                },
+                {
+                    "course_code": "CSGE602012",
+                    "course_name": "Aljabar Linier"
+                },
+                {
+                    "course_code": "CSCM602115",
+                    "course_name": "Matematika Dasar 2"
+                },
+                {
+                    "course_code": "CSGE602055",
+                    "course_name": "Sistem Operasi"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Pemrograman Paralel",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2307"
+                        }
+                    ],
+                    "lecturer": [
+                        "Prof. Drs. Heru Suhartanto M.Sc., Ph.D",
+                        "Ardhi Putra Pratama Hartono S.Kom, M.Sc"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604183",
+            "course_name": "Pengajaran Berbantuan Komputer",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602022",
+                    "course_name": "Perancangan & Pemrograman Web"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas PBK",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2306"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Dra. Kasiyah M.Sc",
+                        "Harry Budi Santoso M.Kom., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM601252",
+            "course_name": "Pengantar Organisasi Komputer",
+            "sks": 3,
+            "term": 2,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSCM601150",
+                    "course_name": "Pengantar Sistem Dijital"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas POK",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "Lab.1101/1103"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "11.00",
+                            "end": "11.50",
+                            "class": "Lab.1101/1103"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Ir. Petrus Mursanto M.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM601150",
+            "course_name": "Pengantar Sistem Dijital",
+            "sks": 4,
+            "term": 1,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas PSD",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "Lab.1101/1103"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "Lab.1107/1109"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Ir. Erdefi Rakun M.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604231",
+            "course_name": "Pengolahan Bahasa Manusia",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSCM602241",
+                    "course_name": "Teori Bahasa & Automata"
+                },
+                {
+                    "course_code": "CSCM603130",
+                    "course_name": "Sistem Cerdas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas NLP",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2404"
+                        }
+                    ],
+                    "lecturer": [
+                        "Rahmad Mahendra S.Kom., M.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604212",
+            "course_name": "Persamaan Diferensial",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602012",
+                    "course_name": "Aljabar Linier"
+                },
+                {
+                    "course_code": "CSCM602115",
+                    "course_name": "Matematika Dasar 2"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Persamaan Dif",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2603"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "11.00",
+                            "end": "11.50",
+                            "class": "2.2603"
+                        }
+                    ],
+                    "lecturer": [
+                        "Drs. Widijanto Satyo Nugroho M.Math., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM603228",
+            "course_name": "Proyek Perangkat Lunak",
+            "sks": 6,
+            "term": 6,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602070",
+                    "course_name": "Basis Data"
+                },
+                {
+                    "course_code": "CSCM603125",
+                    "course_name": "Rekayasa Perangkat Lunak"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas PPL - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2405"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2405"
+                        },
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2406"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2406"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Ade Azurat",
+                        "Gladhi Guarddin S.Kom., M. Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas PPL- B (mulai 12.25)",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "12.00",
+                            "end": "14.55",
+                            "class": "2.2102 (Aula)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "12.00",
+                            "end": "14.55",
+                            "class": "2.2402"
+                        }
+                    ],
+                    "lecturer": [
+                        "Daya Adianto S.Kom., M.Kom.",
+                        "Dr. Ir. Eko Kuswardono Budiardjo M.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas PPL-A (mulai 12.25)",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "12.00",
+                            "end": "14.55",
+                            "class": "2.2402"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "12.00",
+                            "end": "14.55",
+                            "class": "2.2304"
+                        }
+                    ],
+                    "lecturer": [
+                        "Hafiyyan Sayyid Fadhlillah S.Kom., M.Kom",
+                        "Maya Retno Ayu Setyautami S.Kom., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas PPL-D (slesai 12:30)",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.55",
+                            "class": "2.2402"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "11.55",
+                            "class": "2.2402"
+                        }
+                    ],
+                    "lecturer": [
+                        "Suci Fadhilah S.Kom., M.A."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCE604232",
+            "course_name": "Robotika",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSCM601252",
+                    "course_name": "Pengantar Organisasi Komputer"
+                },
+                {
+                    "course_code": "CSCM603130",
+                    "course_name": "Sistem Cerdas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Robotika",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "2.2307"
+                        }
+                    ],
+                    "lecturer": [
+                        "Prof. Dr. Eng. Wisnu Jatmiko S.T., M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM603130",
+            "course_name": "Sistem Cerdas",
+            "sks": 4,
+            "term": 5,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601010",
+                    "course_name": "Matematika Diskret 1"
+                },
+                {
+                    "course_code": "CSGE602040",
+                    "course_name": "Struktur Data & Algoritma"
+                },
+                {
+                    "course_code": "CSGE602013",
+                    "course_name": "Statistika & Probabilitas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Sistem Cerdas",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2406"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2406"
+                        }
+                    ],
+                    "lecturer": [
+                        "Aruni Yasmin Azizah S.Kom, M.CompSc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE602055",
+            "course_name": "Sistem Operasi",
+            "sks": 4,
+            "term": 4,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSCM601252",
+                    "course_name": "Pengantar Organisasi Komputer"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Sistem Operasi - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "3.3114"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "3.3114"
+                        }
+                    ],
+                    "lecturer": [
+                        "Rahmat Mustafa Samik Ibrahim M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas Sistem Operasi - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "3.3114"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "3.3114"
+                        }
+                    ],
+                    "lecturer": [
+                        "Rahmat Mustafa Samik Ibrahim M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas Sistem Operasi - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "3.3114"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "3.3114"
+                        }
+                    ],
+                    "lecturer": [
+                        "Rahmat Mustafa Samik Ibrahim M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas Sistem Operasi - D",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2401"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2401"
+                        }
+                    ],
+                    "lecturer": [
+                        "Heri Kurniawan S.Kom., M.Kom.",
+                        "Dr. Rizal Fathoni Aji S.Kom., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas Sistem Operasi - E",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2306"
+                        }
+                    ],
+                    "lecturer": [
+                        "Muhammad Anwar Ma'sum S.Kom., M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE602040",
+            "course_name": "Struktur Data & Algoritma",
+            "sks": 4,
+            "term": 3,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601021",
+                    "course_name": "Dasar-dasar Pemrograman 2"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas SDA - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2402"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2402"
+                        }
+                    ],
+                    "lecturer": [
+                        "Nilam Fitriah S.Kom., M.Si."
+                    ]
+                },
+                {
+                    "name": "Kelas SDA - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2302"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1101/1103"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2303"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dipta Tanaya S.Kom, M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM602241",
+            "course_name": "Teori Bahasa & Automata",
+            "sks": 4,
+            "term": 4,
+            "curriculum": "01.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601010",
+                    "course_name": "Matematika Diskret 1"
+                },
+                {
+                    "course_code": "CSGE601011",
+                    "course_name": "Matematika Diskret 2"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas TBA - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2404"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ir. Suryana Setiawan M.Sc., Ph.D."
+                    ]
+                },
+                {
+                    "name": "Kelas TBA - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2406"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2406"
+                        }
+                    ],
+                    "lecturer": [
+                        "Maya Retno Ayu Setyautami S.Kom., M.Kom.",
+                        "Dr. Drs. R. Yugo Kartono Isal M.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas TBA - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2405"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2405"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ir. Suryana Setiawan M.Sc., Ph.D."
+                    ]
+                }
+            ]
+        }
+    ]
+}
