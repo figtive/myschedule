@@ -2,7 +2,7 @@ from pyquery import PyQuery
 import parse
 import json
 import os
-import course
+from . import course
 
 class SiakParser:
   '''

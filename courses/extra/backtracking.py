@@ -1,6 +1,6 @@
 from itertools import combinations
 
-from course import Course, Meeting, Day
+from .course import Course, Meeting, Day
 
 class Backtracking:
   '''

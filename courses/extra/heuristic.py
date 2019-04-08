@@ -1,4 +1,4 @@
-from course import Course
+from .course import Course
 
 class Heuristic:
   def get_morning_evening_index(list_of_courses):

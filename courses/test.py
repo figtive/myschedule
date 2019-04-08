@@ -1,8 +1,10 @@
 import unittest
 
-from backtracking import Backtracking
-from course import CourseClass, Meeting, Day, Time
-from siak_parser import CourseParser, SiakParser
+from django.contrib.staticfiles import finders
+
+from courses.extra.backtracking import Backtracking
+from courses.extra.course import CourseClass, Meeting, Day, Time
+from courses.extra.siak_parser import CourseParser, SiakParser
 import json
 import itertools
 
@@ -60,7 +62,7 @@ class Test(unittest.TestCase):
   def test_course_backtracking_with_solution(self):
     bt = Backtracking()
     course_to_classes = None
-    with open('data/s1_ki.json','r') as json_file:
+    with open(finders.find('data/s1_ki.json'),'r') as json_file:
       course_to_classes = CourseParser.get_course_to_classes_list(json.loads(json_file.read()))
     for course, classes in course_to_classes:
       # select all term 4 ki courses (does not clash)
