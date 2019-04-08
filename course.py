@@ -6,24 +6,24 @@ class Course:
   represents a course, 
   example: DDP2
   '''
-  def __init__(self, course_code, course_name, sks, term, curriculum):
+  def __init__(self, course_code, course_name, sks=None, term=None, curriculum=None):
     self.course_code = course_code
     self.course_name = course_name
     self.sks = sks
     self.term = term
     self.curriculum = curriculum
     self.prerequisites = []
-    self.classes = []
   
   def addPrerequisite(self, course):
     if not isinstance(course, Course):
       raise ValueError('course must be instance of Course')
     self.prerequisites.append(course)
-  
-  def addClass(self, course_class):
-    if not isinstance(course_class, CourseClass):
-      raise ValueError('course_class must be instance of CourseClass')
-    self.classes.append(course_class)
+
+  def __str__(self):
+    return '{} {}, {} sks, term {}, curriculum {}\nprerequisites: {}'.format(
+      self.course_code, self.course_name, self.sks, self.term, self.curriculum, 
+      ', '.join(map(lambda p: '{} {}'.format(p.course_code, p.course_name), self.prerequisites))
+    )
 
 class CourseClass:
   '''
@@ -35,15 +35,24 @@ class CourseClass:
     self.language = language
     self.meetings = []
     self.course = course
+    self.lecturer = []
   
   def addMeeting(self, meeting):
     if not isinstance(meeting, Meeting):
-      raise ValueError('meeting must be of type Meeting')
+      raise ValueError('meeting must be instance of Meeting')
     self.meetings.append(meeting)
 
+  def addLecturer(self, lecturer_name):
+    self.lecturer.append(lecturer_name)
+
+  def setCourse(self, course):
+    if not isinstance(course, Course):
+      raise ValueError('course must be instance of Course')
+    self.course = course
+
   def clashWith(self, other):
-    if not isinstance(other, Course):
-      raise ValueError
+    if not isinstance(other, CourseClass):
+      raise ValueError('other must be instance of CourseClass')
     g = itertools.product(self.meetings, other.meetings)
     try:
       while(True):
@@ -62,7 +71,13 @@ class CourseClass:
       'term': self.course.term,
       'curriculum': self.course.curriculum,
     }
-    
+  
+  def __str__(self):
+    result = '{}, language: {}, lecturer: {}\n'.format(self.name, self.language, ', '.join(self.lecturer))
+    for meeting in self.meetings:
+      result += '\t{}\n'.format(meeting)
+    return result
+
 class Meeting:
   '''
   represents one class session in a course, 
@@ -86,10 +101,16 @@ class Meeting:
     if self.day != other.day:
       return False
     
+    if self.start == other.start:
+      return True
+
     if self.start < other.start:
       return False if self.end < other.start else True
     else:
       return other.clashWith(self)
+  
+  def __str__(self):
+    return '{:<10s} {}-{}  {}'.format(self.day, self.start, self.end, self.class_room)
 
 class Day(enum.Enum):
   '''
@@ -101,6 +122,9 @@ class Day(enum.Enum):
   THURSDAY = 4
   FRIDAY = 5
   SATURDAY = 6
+
+  def __str__(self):
+    return self.name
 
 class Time:
   '''
