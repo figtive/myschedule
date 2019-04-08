@@ -1,0 +1,416 @@
+{
+    "courses": [
+        {
+            "course_code": "CSGE602012",
+            "course_name": "Aljabar Linier",
+            "sks": 3,
+            "term": 2,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "UIST601014",
+                    "course_name": "Matematika Dasar 1"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Linear Algebra",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A1.01 (Ged Baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "A1.01 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Aruni Yasmin Azizah S.Kom, M.CompSc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE602070",
+            "course_name": "Basis Data",
+            "sks": 4,
+            "term": 4,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601021",
+                    "course_name": "Dasar-Dasar Pemrograman 2"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Data Base",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "A1.02 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "15.00",
+                            "end": "16.40",
+                            "class": "A1.02 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Fariz Darari",
+                        "Satrio Baskoro Yudhoatmojo S.Kom., M.T.I."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE601021",
+            "course_name": "Dasar-Dasar Pemrograman 2",
+            "sks": 4,
+            "term": 2,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601020",
+                    "course_name": "Dasar-Dasar Pemrograman 1"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Programming Found 2",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "A1.01 (Ged Baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab A1.04 (Ged baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "A1.01 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Amril Syalim S.Kom., M.Eng., Ph.D.",
+                        "Ir. Suryana Setiawan M.Sc., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM603154",
+            "course_name": "Jaringan Komputer",
+            "sks": 4,
+            "term": 4,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602055",
+                    "course_name": "Sistem Operasi"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Computer Networks",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A1.02 (Ged Baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A1.02 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Bayu Anggorojati S.T., M.Sc., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM602115",
+            "course_name": "Matematika Dasar 2",
+            "sks": 3,
+            "term": 2,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "UIST601014",
+                    "course_name": "Matematika Dasar 1"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Calculus 2",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A1.02 (Ged Baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "A1.02 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Prof. Drs. Heru Suhartanto M.Sc., Ph.D"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE601011",
+            "course_name": "Matematika Diskrit 2",
+            "sks": 3,
+            "term": 2,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas Discrete Math 2",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A1.02 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "11.00",
+                            "end": "11.50",
+                            "class": "A1.02 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Kurniawati Azizah S.T., M.Phil."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "UIGE600010",
+            "course_name": "MPK Agama Islam",
+            "sks": 2,
+            "term": 2,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas Islamic Religious",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A1.02 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Firdaus Wajdi Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM602023",
+            "course_name": "Pemrograman Lanjut",
+            "sks": 4,
+            "term": 4,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601021",
+                    "course_name": "Dasar-Dasar Pemrograman 2"
+                },
+                {
+                    "course_code": "CSGE602022",
+                    "course_name": "Perancangan & Pemrograman Web"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Advanced Prog",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A1.01 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A1.01 (Ged Baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "15.00",
+                            "end": "16.40",
+                            "class": "A1.03 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Ade Azurat"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM601252",
+            "course_name": "Pengantar Organisasi Komputer",
+            "sks": 3,
+            "term": 2,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSCM601150",
+                    "course_name": "Pengantar Sistem Dijital"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas ICO",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "15.00",
+                            "end": "16.40",
+                            "class": "Lab.1107/1109"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A1.01 (Ged Baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "A1.01 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Ir. Erdefi Rakun M.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM603125",
+            "course_name": "Rekayasa Perangkat Lunak",
+            "sks": 3,
+            "term": 4,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601021",
+                    "course_name": "Dasar-Dasar Pemrograman 2"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Software Eng",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A1.01 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "A1.02 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Satrio Baskoro Yudhoatmojo S.Kom., M.T.I."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSCM603130",
+            "course_name": "Sistem Cerdas",
+            "sks": 4,
+            "term": 4,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601010",
+                    "course_name": "Matematika Diskrit 1"
+                },
+                {
+                    "course_code": "CSGE602040",
+                    "course_name": "Struktur Data & Algoritma"
+                },
+                {
+                    "course_code": "CSGE602013",
+                    "course_name": "Statistika dan Probabilitas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Intelligent Systems",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "A1.01 (Ged Baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "A1.01 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Aruni Yasmin Azizah S.Kom, M.CompSc."
+                    ]
+                }
+            ]
+        }
+    ]
+}

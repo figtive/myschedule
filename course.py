@@ -1,102 +1,120 @@
-from enum import Enum
-import json
-import rhinoscriptsyntax as rs
-
-
-
-#prompt the user for a file to import
-filter = "JSON file (*.json)|*.json|All Files (*.*)|*.*||"
-filename = rs.OpenFileName("Open JSON File", filter)
-
-#Read JSON data into the datastore variable
-if filename:
-    with open(filename, 'r') as f:
-        datastore = json.load(f)
-
-#Use the new datastore datastructure
-print datastore["day"]["start"]["end"]
-
-
-# with open("data.json", "w") as write_file:
-#    json.dump(data, write_file) 
-
-# class CsvCourseReader:
-  # def create_courses_from(csv_file_path):
-    # '''
-    # read data from a csv file, create courses and 
-    # return a dictionary of course name to list of course classes 
-
-    # example: 
-    # ddp2a = Course('DDP2', 'A', 'Drs. Lim Yohanes Stefanus M.Math., Ph.D', '4')
-    # ddp2a.addMeeting(Day.MONDAY, Time('16:00'), Time('17.40'))
-    # ddp2a.addMeeting(...) # until all class session is included
-
-    # ddp2b = Course('DDP2', 'B', 'Dr. Fariz Darari', '4')
-    # ddp2b.addMeeting(...) # until all class session is included
-
-    # dictionary_returned = {'DDP2': [ddp2a, ddp2b, ...], 'Anum': [..., ...]}
-    # '''
-
-    # if not (isinstance(csv_file_path, str)):
-      # raise ValueError('argument csv_file_path must be string')
-
-    # # TODO
-    # file_pointer = open(csv_file_path, 'r')
-    # course_name_to_available_courses = {'DDP2': []}
-
-    # return course_name_to_available_courses
+import enum
+import itertools
 
 class Course:
   '''
-  represents a class of a course
-  example: class DDP2 A of 'DDP2'
+  represents a course, 
+  example: DDP2
   '''
-  def __init__(self, name, code, lecturer, credit):
+  def __init__(self, course_code, course_name, sks=None, term=None, curriculum=None):
+    self.course_code = course_code
+    self.course_name = course_name
+    self.sks = sks
+    self.term = term
+    self.curriculum = curriculum
+    self.prerequisites = []
+  
+  def addPrerequisite(self, course):
+    if not isinstance(course, Course):
+      raise ValueError('course must be instance of Course')
+    self.prerequisites.append(course)
+
+  def __str__(self):
+    return '{} {}, {} sks, term {}, curriculum {}\nprerequisites: {}'.format(
+      self.course_code, self.course_name, self.sks, self.term, self.curriculum, 
+      ', '.join(map(lambda p: '{} {}'.format(p.course_code, p.course_name), self.prerequisites))
+    )
+
+class CourseClass:
+  '''
+  represents class of course, 
+  example: class DDP2 A of DDP2
+  '''
+  def __init__(self, name, language, course):
     self.name = name
-    self.code = code
-    self.lecturer = lecturer
-    self.credit = credit
+    self.language = language
     self.meetings = []
+    self.course = course
+    self.lecturer = []
   
   def addMeeting(self, meeting):
+    if not isinstance(meeting, Meeting):
+      raise ValueError('meeting must be instance of Meeting')
     self.meetings.append(meeting)
 
+  def addLecturer(self, lecturer_name):
+    self.lecturer.append(lecturer_name)
+
+  def setCourse(self, course):
+    if not isinstance(course, Course):
+      raise ValueError('course must be instance of Course')
+    self.course = course
+
   def clashWith(self, other):
-    if not isinstance(other, Course):
-      raise ValueError
-    for this_meeting in self.meetings:
-      for that_meeting in other.meetings:
-        if this_meeting.clashWith(that_meeting):
+    if not isinstance(other, CourseClass):
+      raise ValueError('other must be instance of CourseClass')
+    g = itertools.product(self.meetings, other.meetings)
+    try:
+      while(True):
+        meeting1, meeting2 = next(g)
+        if meeting1.clashWith(meeting2):
           return True
+    except StopIteration:
+      pass
     return False
-    
+  
+  def get_course_info(self):
+    return {
+      'course_code': self.course.course_code,
+      'course_name': self.course.course_name,
+      'sks': self.course.sks,
+      'term': self.course.term,
+      'curriculum': self.course.curriculum,
+    }
+  
+  def __str__(self):
+    result = '{}, language: {}, lecturer: {}\n'.format(self.name, self.language, ', '.join(self.lecturer))
+    for meeting in self.meetings:
+      result += '\t{}\n'.format(meeting)
+    return result
+
 class Meeting:
   '''
-  represents one class session in a course
-  example: IS class on Monday 13.00 - 14.40
+  represents one class session in a course, 
+  example: DDP2 A class on Monday 13.00 - 14.40
   '''
-  def __init__(self, day, start_time, end_time):
-    if not (isinstance(day, Day) and isinstance(start_time, Time) and isinstance(end_time, Time)):
-      raise ValueError('argument day must be instance of Day, start_time and end_time instance of Time')
+  def __init__(self, day, start, end, class_room):
+    if not (isinstance(day, Day)):
+      raise ValueError('day must be instance of Day')
+    if not (isinstance(start, Time) and isinstance(end, Time)):
+      raise ValueError('start, end must be instance of Time')
     
     self.day = day
-    self.start_time = start_time
-    self.end_time = end_time
+    self.start = start
+    self.end = end
+    self.class_room = class_room
   
   def clashWith(self, other):
     if not isinstance(other, Meeting):
-      raise ValueError('argument other must be instance of Meeting')
+      raise ValueError('other must be instance of Meeting')
     
-    if self.day == other.day and \
-    (self.start_time == other.start_time or \
-    self.start_time < other.start_time and other.start_time < self.end_time or \
-    other.start_time < self.start_time and self.start_time < other.end_time):
+    if self.day != other.day:
+      return False
+    
+    if self.start == other.start:
       return True
-    return False
+
+    if self.start < other.start:
+      return False if self.end < other.start else True
+    else:
+      return other.clashWith(self)
   
-class Day(Enum):
+  def __str__(self):
+    return '{:<10s} {}-{}  {}'.format(self.day, self.start, self.end, self.class_room)
+
+class Day(enum.Enum):
   '''
-  represents what day a class session is held
+  represents day of class meeting held
   '''
   MONDAY = 1
   TUESDAY = 2
@@ -105,17 +123,20 @@ class Day(Enum):
   FRIDAY = 5
   SATURDAY = 6
 
+  def __str__(self):
+    return self.name
+
 class Time:
   '''
-  represents time in hour and minute, allows for comparison of Time objects
-  example: 08:00
+  represents time of class meeting held, 
+  allows for comparison of Time objects
   '''
 
-  separator = ':'
+  separator = '.'
 
   def __init__(self, hour_minute):
     if not (isinstance(hour_minute, str) and len(hour_minute) == 5 and Time.separator in hour_minute):
-      raise ValueError('argument must be string 00:00-23:59')
+      raise ValueError('hour_minute must be string from 00{}00 to 23{}59'.format(Time.separator, Time.separator))
     
     self.hour_int = int(hour_minute.split(Time.separator)[0])
     self.minute_int = int(hour_minute.split(Time.separator)[1])

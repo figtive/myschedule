@@ -1,0 +1,1821 @@
+{
+    "courses": [
+        {
+            "course_code": "CSGE602012",
+            "course_name": "Aljabar Linier",
+            "sks": 3,
+            "term": 3,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "UIST601014",
+                    "course_name": "Matematika Dasar 1"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Aljabar Linier",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2303"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "2.2303"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Dra. Kasiyah M.Sc"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604284",
+            "course_name": "Analitika Media Sosial",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602040",
+                    "course_name": "Struktur Data & Algoritma"
+                },
+                {
+                    "course_code": "CSGE602013",
+                    "course_name": "Statistika dan Probabilitas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Analitika Medsos",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2404"
+                        }
+                    ],
+                    "lecturer": [
+                        "Rahmad Mahendra S.Kom., M.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIM601251",
+            "course_name": "Dasar-Dasar Arsitektur Komputer",
+            "sks": 4,
+            "term": 2,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas DDAK - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "A2.07 (Ged baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "A2.08 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Bayu Anggorojati S.T., M.Sc., Ph.D.",
+                        "Dr. Ir. Petrus Mursanto M.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas DDAK - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "A1.03 (Ged Baru)"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "Lab A1.04 (Ged baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Bayu Anggorojati S.T., M.Sc., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604160",
+            "course_name": "E-Dagang",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSIM601280",
+                    "course_name": "Prinsip-Prinsip Sistem Informasi"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas E-Dagang",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "2.2307"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Putu Wuri Handayani S.Kom., M.Sc.",
+                        "Yekti Wirani S.T., M.T.I."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604275",
+            "course_name": "Integrasi Aplikasi Perusahaan",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602070",
+                    "course_name": "Basis Data"
+                },
+                {
+                    "course_code": "CSIM603154",
+                    "course_name": "Jaringan Komunikasi Data"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas EAI",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2604"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "3.3114"
+                        }
+                    ],
+                    "lecturer": [
+                        "Iis Solichah S.Kom., M.Kom., M.C.S.",
+                        "Daya Adianto S.Kom., M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE604098",
+            "course_name": "Kerja Praktik",
+            "sks": 3,
+            "term": 7,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas Kerja Praktik",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "12.00",
+                            "end": "12.30",
+                            "class": "2.2401"
+                        }
+                    ],
+                    "lecturer": [
+                        "Siti Aminah S.Kom., M.Kom"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIM603291",
+            "course_name": "Komunikasi Bisnis dan Teknis",
+            "sks": 3,
+            "term": 6,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas Kombistek - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2303"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "14.50",
+                            "class": "2.2303"
+                        }
+                    ],
+                    "lecturer": [
+                        "Fatimah Azzahro S.Kom, M.Kom, M.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas Kombistek - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2302"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "14.50",
+                            "class": "2.2302"
+                        }
+                    ],
+                    "lecturer": [
+                        "Muhammad Rifki Shihab B.B.A., M.Sc.",
+                        "Panca Oktavia Hadi Putra B.Sc., M.Bus"
+                    ]
+                },
+                {
+                    "name": "Kelas Kombistek - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2301"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "2.2301"
+                        }
+                    ],
+                    "lecturer": [
+                        "Fatimah Azzahro S.Kom, M.Kom, M.Sc.",
+                        "Muhammad Rifki Shihab B.B.A., M.Sc.",
+                        "Panca Oktavia Hadi Putra B.Sc., M.Bus"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604266",
+            "course_name": "Konfigurasi ERP",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601020",
+                    "course_name": "Dasar-Dasar Pemrograman 1"
+                },
+                {
+                    "course_code": "CSIM602262",
+                    "course_name": "Sistem-Sistem Perusahaan"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Konfigurasi ERP",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "2.2604"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2604"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Indra Budi S.Kom., M.Kom.",
+                        "Widia Resti Fitriani S.Kom., M.Kom"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604276",
+            "course_name": "Manajemen Infrastruktur TI",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602070",
+                    "course_name": "Basis Data"
+                },
+                {
+                    "course_code": "CSIM603154",
+                    "course_name": "Jaringan Komunikasi Data"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas MITI",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "15.00",
+                            "end": "15.50",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2307"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ari Wibisono S.Kom, M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604378",
+            "course_name": "Manajemen Layanan TI",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSIM601280",
+                    "course_name": "Prinsip-Prinsip Sistem Informasi"
+                },
+                {
+                    "course_code": "CSIM603154",
+                    "course_name": "Jaringan Komunikasi Data"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas MLTI - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "13.50",
+                            "class": "2.2406"
+                        }
+                    ],
+                    "lecturer": [
+                        "Heri Kurniawan S.Kom., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas MLTI - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "13.50",
+                            "class": "2.2102 (Aula)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2302"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dadan Hardianto S.Kom., M.Kom",
+                        "Yudho Giri Sucahyo M.Kom., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604180",
+            "course_name": "Manajemen Pengetahuan",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas KM - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "2.2404"
+                        }
+                    ],
+                    "lecturer": [
+                        "dr. Iik Wilarso M.T.I."
+                    ]
+                },
+                {
+                    "name": "Kelas KM - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "17.00",
+                            "end": "17.50",
+                            "class": "2.2307"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ave Adriana Pinem S.Kom., M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604165",
+            "course_name": "Manajemen Rantai Suplai",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSIM602262",
+                    "course_name": "Sistem-Sistem Perusahaan"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas SCM",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "2.2307"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ika Chandra Hapsari S.Kom., M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "UIST601014",
+            "course_name": "Matematika Dasar 1",
+            "sks": 3,
+            "term": 0,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas Matdas 1 (Kel. 1)",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "A1.03 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        ""
+                    ]
+                },
+                {
+                    "name": "Kelas Matdas 1 (Kel. 2)",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "A2.06 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        ""
+                    ]
+                },
+                {
+                    "name": "Kelas Matdas 1 (Kel. 3)",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "A2.07 (Ged baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        ""
+                    ]
+                },
+                {
+                    "name": "Kelas Matdas 1 (Kel. 4)",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "A2.08 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        ""
+                    ]
+                },
+                {
+                    "name": "Kelas Matdas 1 (Kel. 5)",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "A2.09 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        ""
+                    ]
+                },
+                {
+                    "name": "Kelas Matdas 1 (Senin)",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "A2.01 (Auditorium Ged baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Khumaisa Nur'aini S.Si., M.Kom",
+                        "Prof. Drs. T. Basaruddin M.Sc., Ph.D"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE601010",
+            "course_name": "Matematika Diskret 1",
+            "sks": 3,
+            "term": 1,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas MD 1",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.07 (Ged baru)"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "A2.07 (Ged baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ari Saptawijaya S.Kom., M.Sc., Ph.D.",
+                        "Siti Aminah S.Kom., M.Kom"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE603291",
+            "course_name": "Metodologi Penelitian & Penulisan Ilmiah",
+            "sks": 3,
+            "term": 6,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "UIGE600002",
+                    "course_name": "MPK Terintegrasi B"
+                },
+                {
+                    "course_code": "UIGE600001",
+                    "course_name": "MPK Terintegrasi A"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas MPPI - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2301"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "2.2301"
+                        }
+                    ],
+                    "lecturer": [
+                        "Prof. Dr. Eng. Wisnu Jatmiko S.T., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas MPPI - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2402"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "2.2402"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Dra. Kasiyah M.Sc"
+                    ]
+                },
+                {
+                    "name": "Kelas MPPI - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2302"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "2.2302"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Drs. R. Yugo Kartono Isal M.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas MPPI - D",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2303"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "2.2303"
+                        }
+                    ],
+                    "lecturer": [
+                        "Harry Budi Santoso M.Kom., Ph.D."
+                    ]
+                },
+                {
+                    "name": "Kelas MPPI - E",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "2.2302"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Putu Wuri Handayani S.Kom., M.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "UIGE600003",
+            "course_name": "MPK Bahasa Inggris",
+            "sks": 3,
+            "term": 4,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas Bahasa Inggris - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "A2.07 (Ged baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Tyana Rahestrie S.Hum., M.Hum."
+                    ]
+                },
+                {
+                    "name": "Kelas Bahasa Inggris - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "A2.09 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Sadam Husein M.Hum."
+                    ]
+                },
+                {
+                    "name": "Kelas Bahasa Inggris - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "A1.03 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Areyke Herlina Caroline Manorek S.Pd., M.Hum."
+                    ]
+                },
+                {
+                    "name": "Kelas Bahasa Inggris - D",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "A2.08 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Doni Jaya S.Hum., M.Hum."
+                    ]
+                },
+                {
+                    "name": "Kelas Bahasa Inggris - E",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "A1.02 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Fauziah Eka Arisandy S.Pd."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "UIGE600001",
+            "course_name": "MPK Terintegrasi A",
+            "sks": 6,
+            "term": 2,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas MPKT A - Kelas A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2401"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2401"
+                        }
+                    ],
+                    "lecturer": [
+                        "Achmad Ferdinand S.E., M.Pd."
+                    ]
+                },
+                {
+                    "name": "Kelas MPKT A - Kelas B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2502"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2502"
+                        }
+                    ],
+                    "lecturer": [
+                        "Aditya Pradana Setiadi S.Sos., M.Mus."
+                    ]
+                },
+                {
+                    "name": "Kelas MPKT A - Kelas C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2602"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2602"
+                        }
+                    ],
+                    "lecturer": [
+                        "Vinsensius Bambang Widyakusuma G.P. S.Sn."
+                    ]
+                },
+                {
+                    "name": "Kelas MPKT A - Kelas D",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2603"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2404"
+                        }
+                    ],
+                    "lecturer": [
+                        "Sofian Purnama S.Hum., M.Hum."
+                    ]
+                },
+                {
+                    "name": "Kelas MPKT A - Kelas E",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "3.3113"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "3.3113"
+                        }
+                    ],
+                    "lecturer": [
+                        "Mochamad Aviandy S.Hum., M.Hum."
+                    ]
+                },
+                {
+                    "name": "Kelas MPKT A - Kelas F",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2604"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2604"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Karsono Hardjosaputra S.S., M.Hum."
+                    ]
+                },
+                {
+                    "name": "Kelas MPKT A - Kelas G",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2303"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2303"
+                        }
+                    ],
+                    "lecturer": [
+                        "Endarti M.Si."
+                    ]
+                },
+                {
+                    "name": "Kelas MPKT A - Kelas H",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2306"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2405"
+                        }
+                    ],
+                    "lecturer": [
+                        "Rosila Idris B.Sc., M.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas MPKT A - Kelas I",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2406"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "15.30",
+                            "class": "2.2603"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Drs. Rizal Subahar M.Biomed"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604271",
+            "course_name": "Penambangan Data & Inteligensia Bisnis",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602070",
+                    "course_name": "Basis Data"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas PDIB",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2406"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "2.2406"
+                        }
+                    ],
+                    "lecturer": [
+                        "Achmad Fatchuttamam Abka S.Kom, M.Kom"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE602022",
+            "course_name": "Perancangan & Pemrograman Web",
+            "sks": 3,
+            "term": 3,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601020",
+                    "course_name": "Dasar-Dasar Pemrograman 1"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas PPW",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "2.2302"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "16.00",
+                            "end": "17.40",
+                            "class": "Lab.1106"
+                        }
+                    ],
+                    "lecturer": [
+                        "Meganingrum Arista Jiwanggi S.Kom., M.Kom., M.Com.Sc."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIM602161",
+            "course_name": "Prinsip-Prinsip Manajemen",
+            "sks": 3,
+            "term": 3,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas PPM - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2303"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "2.2303"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ave Adriana Pinem S.Kom., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas PPM - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2306"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "14.50",
+                            "class": "2.2306"
+                        }
+                    ],
+                    "lecturer": [
+                        "Yekti Wirani S.T., M.T.I."
+                    ]
+                },
+                {
+                    "name": "Kelas PPM - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "14.50",
+                            "class": "2.2502"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ave Adriana Pinem S.Kom., M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIM601280",
+            "course_name": "Prinsip-Prinsip Sistem Informasi",
+            "sks": 3,
+            "term": 2,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas PPSI",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "A2.06 (Ged Baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "13.00",
+                            "end": "13.50",
+                            "class": "A2.06 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "dr. Iik Wilarso M.T.I."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIM603229",
+            "course_name": "Proyek Pengembangan Sistem Informasi",
+            "sks": 6,
+            "term": 6,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSIM603124",
+                    "course_name": "Sistem Interaksi"
+                },
+                {
+                    "course_code": "CSIM603189",
+                    "course_name": "Manajemen Proyek TI"
+                },
+                {
+                    "course_code": "CSIM603183",
+                    "course_name": "Analisis dan Perancangan Sistem Informasi"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Propensi - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2304"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2306"
+                        }
+                    ],
+                    "lecturer": [
+                        "Larastri Kumaralalita S.Kom, M.Sc.",
+                        "Betty Purwandari S.Kom., M.Sc., Ph.D."
+                    ]
+                },
+                {
+                    "name": "Kelas Propensi - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2307"
+                        }
+                    ],
+                    "lecturer": [
+                        "Nilam Fitriah S.Kom., M.Si.",
+                        "Betty Purwandari S.Kom., M.Sc., Ph.D."
+                    ]
+                },
+                {
+                    "name": "Kelas Propensi - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2404"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "12.30",
+                            "class": "2.2404"
+                        }
+                    ],
+                    "lecturer": [
+                        "Nur Fitriah Ayuning Budi S.Kom, M.Kom.",
+                        "Betty Purwandari S.Kom., M.Sc., Ph.D."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIM602266",
+            "course_name": "Sistem Informasi Akuntansi Keuangan",
+            "sks": 3,
+            "term": 4,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSIM602160",
+                    "course_name": "Administrasi Bisnis"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas SIAK - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2301"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "2.2301"
+                        }
+                    ],
+                    "lecturer": [
+                        "Widia Resti Fitriani S.Kom., M.Kom"
+                    ]
+                },
+                {
+                    "name": "Kelas SIAK - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "2.2303"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "2.2303"
+                        }
+                    ],
+                    "lecturer": [
+                        "Ika Chandra Hapsari S.Kom., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas SIAK - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2306"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "2.2306"
+                        }
+                    ],
+                    "lecturer": [
+                        "Widia Resti Fitriani S.Kom., M.Kom"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIM602262",
+            "course_name": "Sistem-Sistem Perusahaan",
+            "sks": 3,
+            "term": 4,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSIM602160",
+                    "course_name": "Administrasi Bisnis"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas SSP - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2602"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "2.2602"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "Lab.1101/1103"
+                        }
+                    ],
+                    "lecturer": [
+                        "Larastri Kumaralalita S.Kom, M.Sc."
+                    ]
+                },
+                {
+                    "name": "Kelas SSP - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2604"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "2.2604"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "Lab.1107/1109"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "Lab.1107/1109"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "Lab.1107/1109"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "Lab.1107/1109"
+                        }
+                    ],
+                    "lecturer": [
+                        "Muhammad Mishbah S.Kom., M.Kom"
+                    ]
+                },
+                {
+                    "name": "Kelas SSP - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2604"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "14.50",
+                            "class": "2.2604"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "Lab.2.2601"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "14.50",
+                            "class": "Lab.2.2601"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Indra Budi S.Kom., M.Kom.",
+                        "Widia Resti Fitriani S.Kom., M.Kom"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSGE602013",
+            "course_name": "Statistika dan Probabilitas",
+            "sks": 3,
+            "term": 4,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "UIST601014",
+                    "course_name": "Matematika Dasar 1"
+                },
+                {
+                    "course_code": "CSGE601010",
+                    "course_name": "Matematika Diskret 1"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Statprob - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2301"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "2.2301"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dina Chahyati S.Kom., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas Statprob - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2301"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "13.50",
+                            "class": "2.2301"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dina Chahyati S.Kom., M.Kom."
+                    ]
+                },
+                {
+                    "name": "Kelas Statprob - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2302"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "10.00",
+                            "end": "10.50",
+                            "class": "2.2302"
+                        }
+                    ],
+                    "lecturer": [
+                        "Muhammad Okky Ibrohim S.Mat., M.Kom"
+                    ]
+                },
+                {
+                    "name": "Kelas Statprob - D",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Selasa",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "2.2302"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "13.00",
+                            "end": "13.50",
+                            "class": "2.2302"
+                        }
+                    ],
+                    "lecturer": [
+                        "Khumaisa Nur'aini S.Si., M.Kom",
+                        "Muhammad Okky Ibrohim S.Mat., M.Kom"
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIM603216",
+            "course_name": "Statistika Terapan",
+            "sks": 3,
+            "term": 6,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE602013",
+                    "course_name": "Statistika dan Probabilitas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Stater - A",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "3.3114"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "3.3114"
+                        }
+                    ],
+                    "lecturer": [
+                        "Dr. Achmad Nizar Hidayanto S.Kom., M.Kom"
+                    ]
+                },
+                {
+                    "name": "Kelas Stater - B",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "3.3113"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "09.00",
+                            "end": "09.50",
+                            "class": "3.3113"
+                        }
+                    ],
+                    "lecturer": [
+                        "Khumaisa Nur'aini S.Si., M.Kom"
+                    ]
+                },
+                {
+                    "name": "Kelas Stater - C",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "08.00",
+                            "end": "09.40",
+                            "class": "3.3114"
+                        },
+                        {
+                            "day": "Kamis",
+                            "start": "08.00",
+                            "end": "08.50",
+                            "class": "3.3114"
+                        }
+                    ],
+                    "lecturer": [
+                        "Nur Fitriah Ayuning Budi S.Kom, M.Kom."
+                    ]
+                }
+            ]
+        },
+        {
+            "course_code": "CSIE604290",
+            "course_name": "Technopreneurship",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas Technopreneurship",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "2.2307"
+                        }
+                    ],
+                    "lecturer": [
+                        "Bob Hardian Ph.D"
+                    ]
+                }
+            ]
+        }
+    ]
+}

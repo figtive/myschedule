@@ -1,0 +1,27 @@
+stages:
+  - dev
+  - production
+
+staging:
+  image: ruby:2.6
+  stage: dev
+  environment:
+    name: dev
+    url: $DEV_URL
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_DEV --api-key=$HEROKU_API_KEY
+  only:
+    - dev
+
+production:
+  image: ruby:2.6
+  stage: production
+  environment:
+    name: production
+    url: $PRODUCTION_URL
+  script:
+    - gem install dpl
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_PRODUCTION --api-key=$HEROKU_API_KEY
+  only:
+    - master
