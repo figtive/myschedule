@@ -1,8 +1,8 @@
 from pyquery import PyQuery
-import parse
-import json
-import os
-from . import course
+from parse import parse
+from json import dumps
+from os import walk
+from .course import Course, CourseClass, Meeting, Day, Time
 
 class SiakParser:
   '''
@@ -33,7 +33,7 @@ class SiakParser:
         if this_course:
           result['courses'].append(this_course)
           this_course = {}
-        parsed_course_info = parse.parse('{} - {} ({} SKS, Term {}); Kurikulum {}\n{}', row.text())
+        parsed_course_info = parse('{} - {} ({} SKS, Term {}); Kurikulum {}\n{}', row.text())
         this_course['course_code'] = parsed_course_info[0]
         this_course['course_name'] = parsed_course_info[1]
         this_course['sks'] = int(parsed_course_info[2])
@@ -56,7 +56,7 @@ class SiakParser:
         this_course_class['language'] = this_class_info.eq(2).text()
         this_course_class['schedule'] = []
         for class_schedule, class_room in zip(this_class_info.eq(4).text().split('\n'), this_class_info.eq(5).text().split('\n')):
-          parsed_class_schedule = parse.parse('{}, {}-{}', class_schedule)
+          parsed_class_schedule = parse('{}, {}-{}', class_schedule)
           this_course_class['schedule'].append({
                                             'day': parsed_class_schedule[0],
                                             'start': parsed_class_schedule[1],
@@ -93,7 +93,7 @@ class CourseParser:
     course_code_to_course = {}
     # make course objects
     for course_json in complete_json['courses']:
-      course_code_to_course[course_json['course_code']] = course.Course(
+      course_code_to_course[course_json['course_code']] = Course(
         course_json['course_code'], 
         course_json['course_name'], 
         course_json['sks'], 
@@ -106,7 +106,7 @@ class CourseParser:
         try:
           course_code_to_course[course_json['course_code']].addPrerequisite(course_code_to_course[prerequisite['course_code']])
         except KeyError:
-          course_code_to_course[prerequisite['course_code']] = course.Course(prerequisite['course_code'], prerequisite['course_name'])
+          course_code_to_course[prerequisite['course_code']] = Course(prerequisite['course_code'], prerequisite['course_name'])
           course_code_to_course[course_json['course_code']].addPrerequisite(course_code_to_course[prerequisite['course_code']])
     
     return course_code_to_course
@@ -117,23 +117,23 @@ class CourseParser:
     if not (isinstance(class_json, dict)):
       raise ValueError('json must be of type dict')
     
-    course_class = course.CourseClass(class_json['name'], class_json['language'], None)    
+    course_class = CourseClass(class_json['name'], class_json['language'], None)    
     for meeting in class_json['schedule']:
       day = None
       if meeting['day'] == 'Senin':
-        day = course.Day.MONDAY
+        day = Day.MONDAY
       elif meeting['day'] == 'Selasa':
-        day = course.Day.TUESDAY
+        day = Day.TUESDAY
       elif meeting['day'] == 'Rabu':
-        day = course.Day.WEDNESDAY
+        day = Day.WEDNESDAY
       elif meeting['day'] == 'Kamis':
-        day = course.Day.THURSDAY
+        day = Day.THURSDAY
       elif meeting['day'] == 'Jumat':
-        day = course.Day.FRIDAY
+        day = Day.FRIDAY
       else:
         raise ValueError('json contain inappropriate day')
-      course_class.addMeeting(course.Meeting(
-        day, course.Time(meeting['start']), course.Time(meeting['end']), meeting['class']
+      course_class.addMeeting(Meeting(
+        day, Time(meeting['start']), Time(meeting['end']), meeting['class']
       ))
     for lecturer_name in class_json['lecturer']:
       course_class.addLecturer(lecturer_name)
@@ -145,11 +145,11 @@ def main():
   html_dir = 'html/'
   data_dir = 'data/'
   
-  for root, dirs, files in os.walk(html_dir):
+  for root, dirs, files in walk(html_dir):
     for file in files:
       if file.endswith('.html'):
         with open(data_dir + file.replace('.html', '') + '.json', 'w') as json_file:
-          json_file.write(json.dumps(
+          json_file.write(dumps(
             SiakParser.html_to_json(html_dir + file), indent=4, sort_keys=False
           ))
 

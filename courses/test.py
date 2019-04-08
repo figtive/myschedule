@@ -4,9 +4,8 @@ from django.contrib.staticfiles import finders
 
 from courses.extra.backtracking import Backtracking
 from courses.extra.course import CourseClass, Meeting, Day, Time
-from courses.extra.siak_parser import CourseParser, SiakParser
-import json
-import itertools
+from courses.extra.courseparser import CourseParser, SiakParser
+from json import loads
 
 class Test(unittest.TestCase):
   def test_clashing_meetings(self):
@@ -63,7 +62,7 @@ class Test(unittest.TestCase):
     bt = Backtracking()
     course_to_classes = None
     with open(finders.find('data/s1_ki.json'),'r') as json_file:
-      course_to_classes = CourseParser.get_course_to_classes_list(json.loads(json_file.read()))
+      course_to_classes = CourseParser.get_course_to_classes_list(loads(json_file.read()))
     for course, classes in course_to_classes:
       # select all term 4 ki courses (does not clash)
       if course.term == 4:

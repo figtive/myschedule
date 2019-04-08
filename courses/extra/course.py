@@ -1,5 +1,5 @@
-import enum
-import itertools
+from enum import Enum
+from itertools import product
 
 class Course:
   '''
@@ -53,7 +53,7 @@ class CourseClass:
   def clashWith(self, other):
     if not isinstance(other, CourseClass):
       raise ValueError('other must be instance of CourseClass')
-    g = itertools.product(self.meetings, other.meetings)
+    g = product(self.meetings, other.meetings)
     try:
       while(True):
         meeting1, meeting2 = next(g)
@@ -112,7 +112,7 @@ class Meeting:
   def __str__(self):
     return '{:<10s} {}-{}  {}'.format(self.day, self.start, self.end, self.class_room)
 
-class Day(enum.Enum):
+class Day(Enum):
   '''
   represents day of class meeting held
   '''
