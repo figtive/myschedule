@@ -11,6 +11,7 @@ lxml = "==4.3.3"
 parse = "==1.11.1"
 pyquery = "==1.4.0"
 django = "*"
+whitenoise = "*"
 
 [requires]
 python_version = "3.6"
