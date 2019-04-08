@@ -2,7 +2,7 @@ stages:
   - dev
   - production
 
-staging:
+dev:
   image: ruby:2.6
   stage: dev
   environment:
