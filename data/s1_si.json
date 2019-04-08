@@ -1785,6 +1785,37 @@
                     ]
                 }
             ]
+        },
+        {
+            "course_code": "CSIE604290",
+            "course_name": "Technopreneurship",
+            "sks": 3,
+            "term": 5,
+            "curriculum": "06.00.12.01-2016",
+            "prerequisites": [],
+            "classes": [
+                {
+                    "name": "Kelas Technopreneurship",
+                    "language": "Indonesia",
+                    "schedule": [
+                        {
+                            "day": "Rabu",
+                            "start": "10.00",
+                            "end": "11.40",
+                            "class": "2.2307"
+                        },
+                        {
+                            "day": "Jumat",
+                            "start": "16.00",
+                            "end": "16.50",
+                            "class": "2.2307"
+                        }
+                    ],
+                    "lecturer": [
+                        "Bob Hardian Ph.D"
+                    ]
+                }
+            ]
         }
     ]
 }

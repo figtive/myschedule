@@ -367,6 +367,50 @@
                     ]
                 }
             ]
+        },
+        {
+            "course_code": "CSCM603130",
+            "course_name": "Sistem Cerdas",
+            "sks": 4,
+            "term": 4,
+            "curriculum": "02.00.12.01-2016",
+            "prerequisites": [
+                {
+                    "course_code": "CSGE601010",
+                    "course_name": "Matematika Diskrit 1"
+                },
+                {
+                    "course_code": "CSGE602040",
+                    "course_name": "Struktur Data & Algoritma"
+                },
+                {
+                    "course_code": "CSGE602013",
+                    "course_name": "Statistika dan Probabilitas"
+                }
+            ],
+            "classes": [
+                {
+                    "name": "Kelas Intelligent Systems",
+                    "language": "Inggris",
+                    "schedule": [
+                        {
+                            "day": "Senin",
+                            "start": "13.00",
+                            "end": "14.40",
+                            "class": "A1.01 (Ged Baru)"
+                        },
+                        {
+                            "day": "Rabu",
+                            "start": "14.00",
+                            "end": "15.40",
+                            "class": "A1.01 (Ged Baru)"
+                        }
+                    ],
+                    "lecturer": [
+                        "Aruni Yasmin Azizah S.Kom, M.CompSc."
+                    ]
+                }
+            ]
         }
     ]
 }
