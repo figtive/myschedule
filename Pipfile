@@ -12,6 +12,7 @@ parse = "==1.11.1"
 pyquery = "==1.4.0"
 django = "*"
 whitenoise = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.6"
