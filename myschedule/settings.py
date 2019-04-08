@@ -34,7 +34,10 @@ SECRET_KEY = '7xq+mjnvure1nj(dwc1*&d)qhr1lz1awf-=ngi488odwuejvx('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'dev-myschedule-is.herokuapp.com', 
+    'myschedule-is.herokuapp.com'
+]
 
 
 # Application definition
