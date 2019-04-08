@@ -12,20 +12,20 @@ class Backtracking:
     self.constraint_function = None
     self.binary_contraints = []
   
+  # add new variable with it's possible values
   def add_variable(self, variable, values):
-    # add new variable with it's domain values
     self.variable_to_domain[variable] = values
     self.assignments[variable] = None
   
+  # add binary constraint specified in lambda_func to all current variables
   def add_binary_constraint_to_all(self, lambda_func):
-    # add binary constraint specified in lambda_func to all current variables
     self.constraint_function = lambda_func
     self.binary_contraints = list(combinations(list(self.variable_to_domain.keys()), 2))
   
+  # solve CSP with recursive backtracking search, returns a dictionary of assigned variables
   def solve(self):
-    # solve CSP with recursive backtracking search, returns a dictionary of assigned variables
     if self.all_variable_is_assigned():
-      return self.assignments.items()
+      return self.assignments
     variable = self.get_unassigned_variable()
     for value in self.variable_to_domain[variable]:
       self.assignments[variable] = value
@@ -34,29 +34,32 @@ class Backtracking:
       else:
         self.assignments[variable] = None
   
+  # check wether all variables already have a value
   def all_variable_is_assigned(self):
-    # check wether all variables already have a value
-    for key, value in self.assignments.items():
+    for _, value in self.assignments.items():
       if value == None:
         return False
     return True
   
+  # get a random unassigned variable
   def get_unassigned_variable(self):
-    # get a random unassigned variable
     for key, value in self.assignments.items():
       if value == None:
         return key
     return None
   
+  # check if any assignment breaks constraint
   def constraint_is_satisfied(self):
-    # check if any assignment breaks constraint
-    for variable_1, variable_2 in self.binary_contraints:
-      if self.assignments[variable_1] != None and self.assignments[variable_2] != None and self.constraint_function(self.assignments[variable_1], self.assignments[variable_2]) == False:
+    for var1, var2 in self.binary_contraints:
+      if self.assignments[var1] and self.assignments[var2] and \
+        not self.constraint_function(
+          self.assignments[var1], self.assignments[var2]
+        ):
         return False
     return True
 
 def main():
-  print('main')
+  pass
 
 if __name__ == '__main__':
   main()
