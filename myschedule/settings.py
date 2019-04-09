@@ -36,7 +36,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'dev-myschedule-is.herokuapp.com', 
-    'myschedule-is.herokuapp.com'
+    'myschedule-is.herokuapp.com', 
+    'localhost', 
+    '127.0.0.1'
 ]
 
 
