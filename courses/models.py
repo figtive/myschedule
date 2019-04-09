@@ -4,10 +4,10 @@ from itertools import product
 class Course(models.Model):
   course_code = models.CharField(max_length=10, primary_key=True)
   course_name = models.CharField(max_length=40)
-  sks = models.IntegerField(blank=True)
-  term = models.IntegerField(blank=True)
+  sks = models.IntegerField(blank=True, null=True)
+  term = models.IntegerField(blank=True, null=True)
   curriculum = models.CharField(max_length=16, blank=True)
-  prerequisites = models.ManyToManyField('self', symmetrical=False)
+  prerequisites = models.ManyToManyField('self', symmetrical=False, blank=True)
 
   def __str__(self):
     return '{}:{}'.format(self.course_code, self.course_name)
@@ -19,7 +19,7 @@ class CourseClass(models.Model):
     ('ENG', 'English'),
   )
   lecturers = models.ManyToManyField('Lecturer')
-  course = models.ForeignKey('Course', on_delete=models.CASCADE, related_name='course_classes')
+  course = models.ForeignKey('Course', on_delete=models.CASCADE, related_name='course_classes', blank=True)
 
   def clash_with(self, other):
     if isinstance(other, CourseClass):
@@ -54,7 +54,7 @@ class Meeting(models.Model):
   )
   start_time = models.TimeField(auto_now=False, auto_now_add=False)
   end_time = models.TimeField(auto_now=False, auto_now_add=False)
-  course_class = models.ForeignKey('CourseClass', on_delete=models.CASCADE, related_name='meetings')
+  course_class = models.ForeignKey('CourseClass', on_delete=models.CASCADE, related_name='meetings', blank=True)
 
   def clash_with(self, other):
     if isinstance(other, Meeting):
