@@ -2,30 +2,34 @@ import unittest
 
 from django.contrib.staticfiles import finders
 
-from courses.extra.backtracking import Backtracking
-from courses.extra.course import CourseClass, Meeting, Day, Time
-from courses.extra.courseparser import CourseParser, SiakParser
+from .backtracking import Backtracking
+from .course import CourseClass, Meeting, Day, Time
+from .courseparser import CourseParser, SiakParser
 from json import loads
 
 class Test(unittest.TestCase):
+  @unittest.skip
   def test_clashing_meetings(self):
     meetingA = Meeting(Day.MONDAY, Time('08.00'), Time('09.40'), '3.3113')
     meetingB = Meeting(Day.MONDAY, Time('09.00'), Time('10.40'), '3.3113')
     self.assertTrue(meetingA.clashWith(meetingB))
     self.assertTrue(meetingB.clashWith(meetingA))
 
+  @unittest.skip
   def test_non_clashing_meetings_in_same_day(self):
     meetingA = Meeting(Day.MONDAY, Time('08.00'), Time('09.40'), '3.3113')
     meetingB = Meeting(Day.MONDAY, Time('10.00'), Time('11.40'), '3.3113')
     self.assertFalse(meetingA.clashWith(meetingB))
     self.assertFalse(meetingB.clashWith(meetingA))
     
+  @unittest.skip
   def test_non_clashing_meetings_in_different_day(self):
     meetingC = Meeting(Day.MONDAY, Time('08.00'), Time('08.50'), '3.3113')
     meetingD = Meeting(Day.THURSDAY, Time('08.00'), Time('09.40'), '3.3113')
     self.assertFalse(meetingC.clashWith(meetingD))
     self.assertFalse(meetingD.clashWith(meetingC))
 
+  @unittest.skip
   def test_clashing_course(self):
     json_ddp2_a = {"name":"Kelas DDP 2 - A","language":"Indonesia","schedule":[{"day":"Senin","start":"16.00","end":"17.40","class":"A1.03 (Ged Baru)"},{"day":"Selasa","start":"10.00","end":"11.40","class":"A2.08 (Ged Baru)"},{"day":"Kamis","start":"10.00","end":"11.40","class":"A2.08 (Ged Baru)"},{"day":"Senin","start":"16.00","end":"17.40","class":"Lab A1.04 (Ged baru)"}],"lecturer":["Drs. Lim Yohanes Stefanus M.Math., Ph.D"]}
     json_ddp2_b = {"name":"Kelas DDP 2 - B","language":"Indonesia","schedule":[{"day":"Selasa","start":"08.00","end":"09.40","class":"A2.09 (Ged Baru)"},{"day":"Kamis","start":"08.00","end":"09.40","class":"A2.09 (Ged Baru)"},{"day":"Kamis","start":"16.00","end":"17.40","class":"Lab.1101/1103"}],"lecturer":["Dr. Fariz Darari","Laksmita Rahadianti S.Kom., M.Sc., Ph.D."]}
@@ -34,6 +38,7 @@ class Test(unittest.TestCase):
     self.assertFalse(ddp2_a.clashWith(ddp2_b))
     self.assertFalse(ddp2_b.clashWith(ddp2_a))
   
+  @unittest.skip
   def test_non_clashing_course(self):
     json_ddp2_d = {"name":"Kelas DDP 2 - D","language":"Indonesia","schedule":[{"day":"Selasa","start":"08.00","end":"09.40","class":"A2.07 (Ged baru)"},{"day":"Kamis","start":"08.00","end":"09.40","class":"A2.07 (Ged baru)"},{"day":"Kamis","start":"16.00","end":"17.40","class":"Lab.1107/1109"}],"lecturer":["Ardhi Putra Pratama Hartono S.Kom, M.Sc"]}
     json_ddp2_e = {"name":"Kelas DDP 2 - E","language":"Indonesia","schedule":[{"day":"Selasa","start":"08.00","end":"09.40","class":"A2.08 (Ged Baru)"},{"day":"Kamis","start":"08.00","end":"09.40","class":"A2.08 (Ged Baru)"},{"day":"Kamis","start":"16.00","end":"17.40","class":"Lab.2.2601"}],"lecturer":["Dipta Tanaya S.Kom, M.Kom."]}
@@ -42,6 +47,7 @@ class Test(unittest.TestCase):
     self.assertTrue(ddp2_d.clashWith(ddp2_e))
     self.assertTrue(ddp2_e.clashWith(ddp2_d))
 
+  @unittest.skip
   def test_simple_backtracking_with_solution(self):
     bt = Backtracking()
     bt.add_variable('a', [1,2,3])
@@ -50,6 +56,7 @@ class Test(unittest.TestCase):
     bt.add_binary_constraint_to_all(lambda x, y: x != y)
     self.assertEqual(bt.solve(), {'a':1, 'b':2, 'c':3})
   
+  @unittest.skip
   def test_simple_backtracking_without_solution(self):
     bt = Backtracking()
     bt.add_variable('a', [1,2])
@@ -58,6 +65,7 @@ class Test(unittest.TestCase):
     bt.add_binary_constraint_to_all(lambda x, y: x != y)
     self.assertEqual(bt.solve(), None)
   
+  @unittest.skip
   def test_course_backtracking_with_solution(self):
     bt = Backtracking()
     course_to_classes = None
