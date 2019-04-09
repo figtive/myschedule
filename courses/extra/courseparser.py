@@ -57,12 +57,14 @@ class SiakParser:
         this_course_class['schedule'] = []
         for class_schedule, class_room in zip(this_class_info.eq(4).text().split('\n'), this_class_info.eq(5).text().split('\n')):
           parsed_class_schedule = parse('{}, {}-{}', class_schedule)
-          this_course_class['schedule'].append({
-                                            'day': parsed_class_schedule[0],
-                                            'start': parsed_class_schedule[1],
-                                            'end': parsed_class_schedule[2],
-                                            'class': class_room,
-                                          })
+          this_schedule = {
+            'day': parsed_class_schedule[0],
+            'start': parsed_class_schedule[1],
+            'end': parsed_class_schedule[2],
+            'class': class_room,
+          }
+          if not this_schedule in this_course_class['schedule']:
+            this_course_class['schedule'].append(this_schedule)
           this_course_class['lecturer'] = this_class_info.eq(6).text().split('\n')
         this_course['classes'].append(this_course_class)
 
