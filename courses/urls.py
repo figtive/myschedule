@@ -4,5 +4,7 @@ from . import views
 
 app_name = 'courses'
 urlpatterns = [
-  path('filldb/', views.fill_course_data_to_db, name='fill_course_data_to_db')
+  path('fill/', views.fill, name='fill'), 
+  path('reset/', views.reset, name='reset'), 
+  path('convert/', views.convert, name='convert'),
 ]
