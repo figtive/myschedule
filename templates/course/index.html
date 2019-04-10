@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>MySchedule</title>
+</head>
+<body>
+  <h1>Courses</h1>
+  <form action="{% url 'courses:solve' %}" method="post">
+    {% csrf_token %}
+    <div style="display: flex;">
+      {% for department in data %}
+      <div style="display: inline-block; width: 33%;">
+        <h3>{{ department.name }}</h3>
+        {% for course in department.courses %}
+        <div>
+          <input type="checkbox" id="{{ forloop.counter }}" value="{{ course.id }}" name="check">
+          <label for="{{ forloop.counter }}">{{ course.course_code }} - {{ course.course_name }}</label>
+        </div>
+        {% endfor %}
+      </div>
+      {% endfor %}
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
