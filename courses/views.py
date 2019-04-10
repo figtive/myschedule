@@ -1,18 +1,26 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse, HttpResponseForbidden, JsonResponse
+from django.http import HttpResponse, HttpResponseForbidden, HttpResponseRedirect, JsonResponse
 from django.views.decorators.http import require_http_methods
 from rest_framework.renderers import JSONRenderer
 
 from .models import *
 from .serializer import *
 from . import utils
+from json import loads
+
+from .backtracking import Backtracking
 
 @require_http_methods((["GET"]))
 def home_index(request):
   return render(request, 'home/index.html')
 
 @require_http_methods((["GET"]))
-def department_index(request):
+def courses_index(request):
+  context = loads(api_department_index(request).content)
+  return render(request, 'course/index.html', context)
+
+@require_http_methods((["GET"]))
+def api_department_index(request):
   json = {'data': []}
   for dep in Department.objects.all():
     serializer = DepartmentSerializer(dep)
@@ -20,14 +28,14 @@ def department_index(request):
   return JsonResponse(json, json_dumps_params={'indent': 2})
 
 @require_http_methods((["GET"]))
-def department_show(request, id):
+def api_department_show(request, id):
   json = {}
   serializer = DepartmentSerializer(get_object_or_404(Department, pk=id))
   json['data'] = serializer.data
   return JsonResponse(json, json_dumps_params={'indent': 2})
 
 @require_http_methods((["GET"]))
-def course_show(request, id):
+def api_course_show(request, id):
   json = {}
   serializer = CourseSerializer(get_object_or_404(Course, pk=id))
   json['data'] = serializer.data
@@ -35,7 +43,22 @@ def course_show(request, id):
 
 @require_http_methods((["POST"]))
 def solve(request):
-  pass
+  if request.method == 'POST':
+    json = {'data': {'selected': request.POST.getlist('check')}}
+
+    bt = Backtracking()
+    bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
+    for course_id in json['data']['selected']:
+      course_obj = Course.objects.get(id=course_id)
+      bt.add_variable(course_obj, list(course_obj.course_classes.all()))
+
+    result_obj = bt.solve()
+    result_list = []
+    for course, class_ in result_obj.items():
+      result_list.append({'course':SimpleCourseSerializer(course).data, 'class': CourseClassSerializer(class_).data})
+    json['data']['result'] = result_list
+    
+    return JsonResponse(json, json_dumps_params={'indent': 2})
 
 def fill(request):
   if request.user.is_superuser:

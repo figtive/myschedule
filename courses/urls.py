@@ -4,9 +4,11 @@ from . import views
 
 app_name = 'courses'
 urlpatterns = [
-  path('department', views.department_index, name='department_index'), 
-  path('department/<int:id>', views.department_show, name='department_show'),
-  path('course/<int:id>', views.course_show, name='course_show'),
+  path('', views.courses_index, name='courses_index'), 
+
+  path('department', views.api_department_index, name='api_department_index'), 
+  path('department/<int:id>', views.api_department_show, name='api_department_show'),
+  path('course/<int:id>', views.api_course_show, name='api_course_show'),
 
   path('solve/', views.solve, name='solve'), 
   path('fill/', views.fill, name='fill'), 
