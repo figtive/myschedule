@@ -47,15 +47,16 @@ def solve(request):
     json = {'data': {'selected': request.POST.getlist('check')}}
 
     bt = Backtracking()
-    bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
     for course_id in json['data']['selected']:
       course_obj = Course.objects.get(id=course_id)
       bt.add_variable(course_obj, list(course_obj.course_classes.all()))
+    bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
 
     result_obj = bt.solve()
     result_list = []
-    for course, class_ in result_obj.items():
-      result_list.append({'course':SimpleCourseSerializer(course).data, 'class': CourseClassSerializer(class_).data})
+    if result_obj:
+      for course, class_ in result_obj.items():
+        result_list.append({'course':SimpleCourseSerializer(course).data, 'class': CourseClassSerializer(class_).data})
     json['data']['result'] = result_list
     
     return JsonResponse(json, json_dumps_params={'indent': 2})
