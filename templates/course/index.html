@@ -13,9 +13,14 @@
       <div style="display: inline-block; width: 33%;">
         <h3>{{ department.name }}</h3>
         {% for course in department.courses %}
-        <div>
+        <div style="display: flex; align-items: flex-start;">
           <input type="checkbox" id="{{ forloop.counter }}" value="{{ course.id }}" name="check">
-          <label for="{{ forloop.counter }}">{{ course.course_code }} - {{ course.course_name }}</label>
+          <div style="display: inline-block;">
+            <label for="{{ forloop.counter }}">
+              {{ course.course_code }} - {{ course.course_name }}<br>
+              term {{ course.term }} - sks {{ course.sks }}
+            </label>
+          </div>
         </div>
         {% endfor %}
       </div>
