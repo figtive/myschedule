@@ -2,9 +2,18 @@ from rest_framework import serializers
 
 from .models import *
 
+class SimpleCourseSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = Course
+    fields = (
+      'id', 'course_code', 'course_name', 
+      'sks', 'term', 'curriculum'
+    )
+    
 class MeetingSerializer(serializers.ModelSerializer):
   start_time = serializers.TimeField(format="%H.%M")
   end_time = serializers.TimeField(format="%H.%M")
+  day = serializers.CharField(source='get_day_display')
 
   class Meta:
     model = Meeting
