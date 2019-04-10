@@ -1,5 +1,6 @@
 from django.test import TestCase
 from django.contrib.staticfiles import finders
+from django.db.models import Q
 
 from datetime import time
 from itertools import product
@@ -10,7 +11,7 @@ from .backtracking import Backtracking
 
 
 class BacktrackingTest(TestCase):
-  def test_simle_bt_with_solution_of_ki_data(self):
+  def test_simple_bt_with_solution_of_ki_data(self):
     data_dir = finders.find('data/s1_ki.json')
     fill_department_table()
     fill_specific_course_data_to_db(data_dir)
@@ -29,7 +30,7 @@ class BacktrackingTest(TestCase):
     for course, class_ in result.items():
       self.assertNotEqual(class_, None)
   
-  def test_simle_bt_with_solution_of_ik_data(self):
+  def test_simple_bt_with_solution_of_ik_data(self):
     data_dir = finders.find('data/s1_ik.json')
     fill_department_table()
     fill_specific_course_data_to_db(data_dir)
@@ -46,6 +47,26 @@ class BacktrackingTest(TestCase):
     self.assertEqual(len(result), Course.objects.all().filter(term = 4).count())
     for course, class_ in result.items():
       self.assertNotEqual(class_, None)
+
+  def test_bt_with_no_solution(self):
+    data_dir = finders.find('data/s1_ki.json')
+    fill_department_table()
+    fill_specific_course_data_to_db(data_dir)
+
+    bt = Backtracking()
+    for course in Course.objects.all().filter(Q(course_name='Matematika Diskrit 2') | Q(course_name='Rekayasa Perangkat Lunak')):
+      bt.add_variable(course, course.course_classes.all())
+    bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
+    result = bt.solve()
+    # for course, class_ in result.items():
+    #   print(course, class_)
+    #   for meeting in class_.meetings.all():
+    #     print('  ' + str(meeting))
+    self.assertEqual(len(bt.variable_to_domain), 2)
+    self.assertEqual(result, None)
+    # self.assertEqual(len(result), Course.objects.all().filter(term = 4).count())
+    # for course, class_ in result.items():
+    #   self.assertNotEqual(class_, None)
 
 class CourseClassTestCase(TestCase):
   def setUp(self):
