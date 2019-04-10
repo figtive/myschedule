@@ -1,4 +1,5 @@
 from django.db import models
+
 from itertools import product
 
 class Department(models.Model):

@@ -13,6 +13,7 @@ pyquery = "==1.4.0"
 django = "*"
 whitenoise = "*"
 gunicorn = "*"
+djangorestframework = "*"
 
 [requires]
 python_version = "3.6"
