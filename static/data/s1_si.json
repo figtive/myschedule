@@ -105,12 +105,6 @@
                             "start": "08.00",
                             "end": "09.40",
                             "class": "A2.01 (Auditorium Ged baru)"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "15.00",
-                            "end": "15.50",
-                            "class": "A2.08 (Ged Baru)"
                         }
                     ],
                     "lecturer": [
@@ -139,12 +133,6 @@
                             "start": "10.00",
                             "end": "11.40",
                             "class": "A2.01 (Auditorium Ged baru)"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "15.00",
-                            "end": "15.50",
-                            "class": "Lab A1.04 (Ged baru)"
                         }
                     ],
                     "lecturer": [
@@ -1481,18 +1469,6 @@
                             "start": "09.00",
                             "end": "09.50",
                             "class": "2.2602"
-                        },
-                        {
-                            "day": "Senin",
-                            "start": "10.00",
-                            "end": "11.40",
-                            "class": "Lab.2.2601"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "09.00",
-                            "end": "09.50",
-                            "class": "Lab.1101/1103"
                         }
                     ],
                     "lecturer": [
@@ -1520,12 +1496,6 @@
                             "start": "13.00",
                             "end": "14.40",
                             "class": "Lab.1107/1109"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "09.00",
-                            "end": "09.50",
-                            "class": "Lab.1107/1109"
                         }
                     ],
                     "lecturer": [
@@ -1547,18 +1517,6 @@
                             "start": "14.00",
                             "end": "14.50",
                             "class": "2.2604"
-                        },
-                        {
-                            "day": "Senin",
-                            "start": "13.00",
-                            "end": "14.40",
-                            "class": "Lab.2.2601"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "14.00",
-                            "end": "14.50",
-                            "class": "Lab.2.2601"
                         }
                     ],
                     "lecturer": [

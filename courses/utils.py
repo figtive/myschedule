@@ -212,7 +212,7 @@ class SiakParser:
             'class': class_room,
           }
           # prevent duplicate meetings
-          if not this_schedule in this_course_class['schedule']:
+          if not any(this_schedule['day'] == e['day'] and this_schedule['start'] == e['start'] and this_schedule['end'] == e['end'] for e in this_course_class['schedule']):
             this_course_class['schedule'].append(this_schedule)
           # parse list of lecturers
           this_course_class['lecturer'] = this_class_info.eq(6).text().split('\n')
