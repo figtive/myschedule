@@ -12,64 +12,63 @@ from .backtracking import Backtracking
 
 class BacktrackingTest(TestCase):
   def test_simple_bt_with_solution_of_ki_data(self):
+    # populate test database with s1_ki.json data
     data_dir = finders.find('data/s1_ki.json')
     fill_department_table()
     fill_specific_course_data_to_db(data_dir)
 
+    # setup backtracking CSP
     bt = Backtracking()
+    # select only courses for term 4
     for course in Course.objects.all().filter(term = 4):
-      bt.add_variable(course, course.course_classes.all())
+      bt.add_variable(course, list(course.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
     result = bt.solve()
-    # for course, class_ in result.items():
-    #   print(course, class_)
-    #   for meeting in class_.meetings.all():
-    #     print('  ' + str(meeting))
+
     self.assertNotEqual(result, None)
     self.assertEqual(len(result), Course.objects.all().filter(term = 4).count())
     for course, class_ in result.items():
       self.assertNotEqual(class_, None)
   
   def test_simple_bt_with_solution_of_ik_data(self):
+    # populate test database with s1_ki.json data
     data_dir = finders.find('data/s1_ik.json')
     fill_department_table()
     fill_specific_course_data_to_db(data_dir)
+    # setup backtracking CSP
     bt = Backtracking()
+    # select only courses for term 4
     for course in Course.objects.all().filter(term = 4):
-      bt.add_variable(course, course.course_classes.all())
+      bt.add_variable(course, list(course.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
     result = bt.solve()
-    # for course, class_ in result.items():
-    #   print(course, class_)
-    #   for meeting in class_.meetings.all():
-    #     print('  ' + str(meeting))
+
     self.assertNotEqual(result, None)
     self.assertEqual(len(result), Course.objects.all().filter(term = 4).count())
     for course, class_ in result.items():
       self.assertNotEqual(class_, None)
 
   def test_bt_with_no_solution(self):
+    # populate test database with s1_ki.json data
     data_dir = finders.find('data/s1_ki.json')
     fill_department_table()
     fill_specific_course_data_to_db(data_dir)
 
+    # setup backtracking CSP with MD2 and RPL as variables
+    # which have clashing schedule
     bt = Backtracking()
     for course in Course.objects.all().filter(Q(course_name='Matematika Diskrit 2') | Q(course_name='Rekayasa Perangkat Lunak')):
-      bt.add_variable(course, course.course_classes.all())
+      bt.add_variable(course, list(course.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
     result = bt.solve()
-    # for course, class_ in result.items():
-    #   print(course, class_)
-    #   for meeting in class_.meetings.all():
-    #     print('  ' + str(meeting))
+    
     self.assertEqual(len(bt.variable_to_domain), 2)
     self.assertEqual(result, None)
-    # self.assertEqual(len(result), Course.objects.all().filter(term = 4).count())
-    # for course, class_ in result.items():
-    #   self.assertNotEqual(class_, None)
 
 class CourseClassTestCase(TestCase):
   def setUp(self):
+    # setup 3 course classes, c1 and c2 have
+    # clashing schedule
     c1 = CourseClass.objects.create(name = 'Kelas Linear Algebra')
     c1.meetings.add(Meeting.objects.create(
       day='MON', 
