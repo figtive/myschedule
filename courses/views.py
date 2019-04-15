@@ -10,8 +10,6 @@ from json import loads
 
 from .backtracking import Backtracking
 
-from django.views.decorators.csrf import csrf_exempt
-
 @require_http_methods((["GET"]))
 def home_index(request):
   return render(request, 'home/index.html')
@@ -43,7 +41,6 @@ def api_course_show(request, id):
   json['data'] = serializer.data
   return JsonResponse(json, json_dumps_params={'indent': 2})
 
-@csrf_exempt
 @require_http_methods((["POST"]))
 def solve(request):
   if request.method == 'POST':

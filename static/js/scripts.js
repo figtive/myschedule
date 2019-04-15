@@ -22564,7 +22564,7 @@ $(document).ready(function() {
       }
       return obj
     }, {});
-    
+
     const submitButton = $('button#course-form-submit');
     submitButton.prop('disabled', true);
 
@@ -22573,6 +22573,11 @@ $(document).ready(function() {
       type: "POST",
       contentType: "application/json; charset=utf-8",
       data: JSON.stringify(data),
+      beforeSend: function(xhr, settings) {
+        if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+          xhr.setRequestHeader("X-CSRFToken", data.csrfmiddlewaretoken)
+        }
+      },
       success: function(result){
         console.log(result)
       },
