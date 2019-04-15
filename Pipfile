@@ -14,6 +14,7 @@ django = "*"
 whitenoise = "*"
 gunicorn = "*"
 djangorestframework = "*"
+django-npm = "*"
 
 [requires]
 python_version = "3.6"
