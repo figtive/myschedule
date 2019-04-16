@@ -3,8 +3,8 @@ stages:
   - production
 
 before_script:
-  - sudo apt install npm
-  - npm install
+  - apt-get update
+  - apt-get install -y npm
   - npm run build
 
 dev:
