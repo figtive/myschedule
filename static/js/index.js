@@ -1,2 +1,3 @@
-require("./lib/calendar.js")
-require("./lib/form.js")
+require("./partials/calendar.js.js")
+require("./partials/form.js.js")
+require("./partials/add-event.js.js")
