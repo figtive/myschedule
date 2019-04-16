@@ -3,10 +3,12 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 
 var $ = require("jquery")
 
+var calendar;
+
 $(document).ready(function() {
   var calendarEl = document.getElementById('calendar');
 
-  var calendar = new Calendar(calendarEl, {
+  calendar = new Calendar(calendarEl, {
     plugins: [ timeGridPlugin ],
     defaultView: 'timeGridWeek',
     allDaySlot: false,

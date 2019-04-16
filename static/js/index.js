@@ -1,3 +1,3 @@
-require("./partials/calendar.js.js")
-require("./partials/form.js.js")
-require("./partials/add-event.js.js")
+require("./partials/calendar.js")
+require("./partials/form.js")
+require("./partials/add-event.js")
