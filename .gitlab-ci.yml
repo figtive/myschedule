@@ -2,15 +2,6 @@ stages:
   - dev
   - production
 
-before_script:
-  - apt-get update
-  - apt-get install -y curl
-  - curl -sL https://deb.nodesource.com/setup_6.x | bash -
-  - apt-get install -y nodejs
-  - apt-get install -y npm
-  - npm install
-  - npm run build
-
 dev:
   image: ruby:2.6
   stage: dev
