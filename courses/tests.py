@@ -11,6 +11,26 @@ from .backtracking import Backtracking
 
 
 class BacktrackingTest(TestCase):
+  def test_simple_backtracking(self):
+    bt = Backtracking()
+    bt.add_variable("a", [1,2,3])
+    bt.add_variable("b", [1,2,3])
+    bt.add_variable("c", [1,2,3])
+    bt.add_binary_constraint_to_all(lambda x, y: x != y)
+    result = bt.get_solutions()
+    self.assertEqual(len(result), 6)
+    self.assertTrue({"a": 1, "b": 2, "c": 3} in result)
+    
+  def test_simple_backtracking_2(self):
+    bt = Backtracking()
+    bt.add_variable("a", [1])
+    bt.add_variable("b", [2])
+    bt.add_variable("c", [3,4,5])
+    bt.add_binary_constraint_to_all(lambda x, y: x != y)
+    result = bt.get_solutions()
+    self.assertEqual(len(result), 3)
+    self.assertTrue({"a": 1, "b": 2, "c": 5} in result)
+
   def test_simple_bt_with_solution_of_ki_data(self):
     # populate test database with s1_ki.json data
     data_dir = finders.find('data/s1_ki.json')
@@ -23,7 +43,7 @@ class BacktrackingTest(TestCase):
     for course in Course.objects.all().filter(term = 4):
       bt.add_variable(course, list(course.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
-    result = bt.solve()
+    result = bt.get_solution()
 
     self.assertNotEqual(result, None)
     self.assertEqual(len(result), Course.objects.all().filter(term = 4).count())
@@ -41,7 +61,7 @@ class BacktrackingTest(TestCase):
     for course in Course.objects.all().filter(term = 4):
       bt.add_variable(course, list(course.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
-    result = bt.solve()
+    result = bt.get_solution()
 
     self.assertNotEqual(result, None)
     self.assertEqual(len(result), Course.objects.all().filter(term = 4).count())
@@ -60,7 +80,7 @@ class BacktrackingTest(TestCase):
     for course in Course.objects.all().filter(Q(course_name='Matematika Diskrit 2') | Q(course_name='Rekayasa Perangkat Lunak')):
       bt.add_variable(course, list(course.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
-    result = bt.solve()
+    result = bt.get_solution()
     
     self.assertEqual(len(bt.variable_to_domain), 2)
     self.assertEqual(result, None)

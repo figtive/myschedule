@@ -1,18 +1,18 @@
 from itertools import combinations
-from .models import *
+import copy
 
 class Backtracking:
   '''
   represents a CSP problem solved with backtracking search
 
   TODO:
-  - modify backtracking to return more than one solution
   - update constraint upon add_variable
   - add argument type checking
   '''
   def __init__(self):
     self.variable_to_domain = {}
     self.variable_to_legal_values = {}
+    self.solutions = []
     self.assignments = {}
     self.constraint_function = None
     self.binary_contraints = []
@@ -22,7 +22,7 @@ class Backtracking:
     add new variable with values
     '''
     self.variable_to_domain[variable] = values
-    self.variable_to_legal_values[variable] = values
+    self.variable_to_legal_values[variable] = copy.deepcopy(values)
     self.assignments[variable] = None
   
   def add_binary_constraint_to_all(self, lambda_func):
@@ -32,23 +32,36 @@ class Backtracking:
     self.constraint_function = lambda_func
     self.binary_contraints = list(combinations(list(self.variable_to_domain.keys()), 2))
   
-  def solve(self):
+  def get_solution(self):
+    if self.solutions == []:
+      self.get_solution_helper()
+    return self.solutions[0] if len(self.solutions) > 0 else None
+
+  def get_solutions(self):
+    if self.solutions == []:
+      self.get_solution_helper()
+    return self.solutions if len(self.solutions) > 0 else None
+
+  def get_solution_helper(self):
     '''
     do backtracking search with variables and values in 
     self.variable_to_domain, returning a dictionary of
     assignments or None if no possible assignment
     '''
     if self.all_variable_is_assigned():
-      return self.assignments
+      self.solutions.append(copy.deepcopy(self.assignments))
+      return
     variable = self.get_unassigned_variable()
     while(True):
       value = self.get_legal_value(variable)
       self.do_forward_chaining(variable, value)
       if value == None:
+        self.assignments[variable] = None
+        self.variable_to_legal_values[variable] = copy.deepcopy(self.variable_to_domain[variable])
         break
       self.assignments[variable] = value
       if self.constraint_is_satisfied():
-        return self.solve()
+        self.get_solution_helper()
       else:
         self.assignments[variable] = None
   
