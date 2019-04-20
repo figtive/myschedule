@@ -31,12 +31,6 @@ STATICFILES_FINDERS = [
     'npm.finders.NpmFinder'
 ]
 
-NPM_ROOT_PATH = BASE_DIR
-NPM_STATIC_FILES_PREFIX = 'node_modules'
-NPM_FILE_PATTERNS = {
-    '@fullcalendar': ['*']
-}
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
