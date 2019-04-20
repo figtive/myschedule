@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+{% extends '_base.html' %}
+{% load static %}
 
-<html>
-<head>
-  <title>MySchedule</title>
-</head>
-<body>
+{% block title %}MySchedule{% endblock %}
+
+{% block content %}
   <h1>Welcome to MySchedule</h1>
   <a href="{% url 'courses:courses_index' %}">courses</a>
-</body>
-</html>
+{% endblock %}

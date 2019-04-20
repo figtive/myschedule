@@ -1,6 +1,36 @@
+{% extends '_base.html' %}
 {% load static %}
-<!DOCTYPE html>
 
+{% block title %}MySchedule | Courses{% endblock %}
+
+{% block content %}
+<h1>Courses</h1>
+<div id='calendar'></div>
+<form action="{% url 'courses:solve' %}" id="course-form" method="post">
+  {% csrf_token %}
+  <div style="display: flex;">
+    {% for department in data %}
+    <div style="display: inline-block; width: 33%;">
+      <h3>{{ department.name }}</h3>
+      {% for course in department.courses %}
+      <div style="display: flex; align-items: flex-start;">
+        <input type="checkbox" id="{{ forloop.counter }}" value="{{ course.id }}" name="check">
+        <div style="display: inline-block;">
+          <label for="{{ forloop.counter }}">
+            {{ course.course_code }} - {{ course.course_name }}<br>
+            term {{ course.term }} - sks {{ course.sks }}
+          </label>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endfor %}
+  </div>
+  <button type="submit" id="course-form-submit">Submit</button>
+</form>
+{% endblock %}
+
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title>MySchedule</title>
@@ -34,4 +64,4 @@
 
   <script src="{% static 'script.js' %}"></script>
 </body>
-</html>
+</html> -->
