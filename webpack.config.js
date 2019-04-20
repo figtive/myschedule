@@ -1,16 +1,37 @@
-const path = require('path')
-const src_dir = './static/js/'
-const build_dir = './static/js/'
+const path = require('path');
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
-  mode: 'development',
-  entry: src_dir + 'index.js',
-  resolve: {
-    extensions: [ '.js' ]
-  },
+  entry: { main: './static/index.js' },
   output: {
-    filename: 'scripts.js',
-    path: path.join(__dirname, build_dir)
+    path: path.join(__dirname, 'static'),
+    filename: 'script.js'
   },
-  devtool: 'sourcemap'
-}
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: [
+          path.join(__dirname, "static/css"), 
+          path.join(__dirname, "node_modules")
+        ],
+        use: {
+          loader: "babel-loader"
+        }
+      },
+      {
+        test: /\.css$/,
+        include: [
+          path.join(__dirname, "static/css"), 
+          path.join(__dirname, "node_modules")
+        ],
+        use:  ['style-loader', MiniCssExtractPlugin.loader, 'css-loader']
+      }
+    ]
+  }, 
+  plugins: [
+    new MiniCssExtractPlugin({
+      filename: 'style.css',
+    })
+  ]
+};
