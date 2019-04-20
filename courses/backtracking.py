@@ -16,6 +16,7 @@ class Backtracking:
     self.assignments = {}
     self.constraint_function = None
     self.binary_contraints = []
+    self.saved_states = []
   
   def add_variable(self, variable, values):
     '''
@@ -48,8 +49,10 @@ class Backtracking:
     self.variable_to_domain, returning a dictionary of
     assignments or None if no possible assignment
     '''
+    self.push_variable_to_legal_values_state()
     if self.all_variable_is_assigned():
       self.solutions.append(copy.deepcopy(self.assignments))
+      self.pop_variable_to_legal_values_state()
       return
     variable = self.get_unassigned_variable()
     while(True):
@@ -57,7 +60,7 @@ class Backtracking:
       self.do_forward_chaining(variable, value)
       if value == None:
         self.assignments[variable] = None
-        self.variable_to_legal_values[variable] = copy.deepcopy(self.variable_to_domain[variable])
+        self.variable_to_legal_values = self.pop_variable_to_legal_values_state()
         break
       self.assignments[variable] = value
       if self.constraint_is_satisfied():
@@ -65,6 +68,12 @@ class Backtracking:
       else:
         self.assignments[variable] = None
   
+  def pop_variable_to_legal_values_state(self):
+    return self.saved_states.pop() if len(self.saved_states) > 0 else None
+  
+  def push_variable_to_legal_values_state(self):
+    self.saved_states.append(copy.deepcopy(self.variable_to_legal_values))
+
   def all_variable_is_assigned(self):
     '''
     return true if all variables in assignment are assigned, 

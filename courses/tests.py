@@ -9,7 +9,6 @@ from .models import *
 from .utils import fill_specific_course_data_to_db, fill_department_table
 from .backtracking import Backtracking
 
-
 class BacktrackingTest(TestCase):
   def test_simple_backtracking(self):
     bt = Backtracking()
@@ -24,12 +23,13 @@ class BacktrackingTest(TestCase):
   def test_simple_backtracking_2(self):
     bt = Backtracking()
     bt.add_variable("a", [1])
-    bt.add_variable("b", [2])
-    bt.add_variable("c", [3,4,5])
+    bt.add_variable("b", [2,3])
+    bt.add_variable("c", [2,3,4,5])
     bt.add_binary_constraint_to_all(lambda x, y: x != y)
     result = bt.get_solutions()
-    self.assertEqual(len(result), 3)
-    self.assertTrue({"a": 1, "b": 2, "c": 5} in result)
+    self.assertEqual(len(result), 6)
+    self.assertTrue({"a": 1, "b": 2, "c": 3} in result)
+    self.assertTrue({"a": 1, "b": 3, "c": 2} in result)
 
   def test_simple_bt_with_solution_of_ki_data(self):
     # populate test database with s1_ki.json data
