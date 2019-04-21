@@ -3,11 +3,11 @@ from django.contrib.staticfiles import finders
 from django.db.models import Q
 
 from datetime import time
-from itertools import product
+from itertools import combinations
 
 from .models import *
 from .utils import fill_specific_course_data_to_db, fill_department_table
-from .backtracking import Backtracking
+from .backtracking import Backtracking, FitnessFunction
 
 class BacktrackingTest(TestCase):
   def test_simple_backtracking(self):
@@ -82,7 +82,6 @@ class BacktrackingTest(TestCase):
     data_dir = finders.find('data/s1_ki.json')
     fill_department_table()
     fill_specific_course_data_to_db(data_dir)
-
     # setup backtracking CSP with MD2 and RPL as variables
     # which have clashing schedule
     bt = Backtracking()
@@ -93,6 +92,95 @@ class BacktrackingTest(TestCase):
     
     self.assertEqual(len(bt.variable_to_domain), 2)
     self.assertEqual(result, None)
+  
+  def test_time_of_day_preference(self):
+    # populate test database with s1_ki.json data
+    data_dir = finders.find('data/s1_ik.json')
+    fill_department_table()
+    fill_specific_course_data_to_db(data_dir)
+    selected_courses = ['Analisis Numerik']
+    # setup backtracking CSP
+    bt = Backtracking()
+    # select only courses for term 4
+    for course in Course.objects.all():
+      if course.course_name in selected_courses:
+        bt.add_variable(course, list(course.course_classes.all()))
+    bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
+    results  = bt.get_solutions()
+    evening_class_preference = sorted(results, key=FitnessFunction.time_of_day, reverse=True)[0]
+    self.assertTrue('Kelas Anum - A' in [class_.name for class_ in evening_class_preference.values()])
+  
+  def test_density_of_day_preference(self):
+    # populate test database with s1_ik.json data
+    data_dir = finders.find('data/s1_ik.json')
+    fill_department_table()
+    fill_specific_course_data_to_db(data_dir)
+    # setup backtracking CSP
+    bt = Backtracking()
+    # select only courses for term 4
+    for course in Course.objects.all().filter(term = 4):
+      bt.add_variable(course, list(course.course_classes.all()))
+    bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
+    results  = bt.get_solutions()
+    packed_schedule_preference = sorted(results, key=FitnessFunction.density_of_day)[0]
+    self.assertNotEqual(packed_schedule_preference, None)
+
+class FitnessFunctionTestCase(TestCase):
+  def test_time_of_day_fitness_value(self):
+    morning_class = CourseClass.objects.create(name = 'Kelas Linear Algebra')
+    morning_class.meetings.add(Meeting.objects.create(
+      day='MON', 
+      start_time = time(hour=10, minute=0), 
+      end_time = time(hour=11, minute=40), 
+      class_room = '-'
+    ))
+    evening_class = CourseClass.objects.create(name = 'Kelas Data Base')
+    evening_class.meetings.add(Meeting.objects.create(
+      day='MON', 
+      start_time = time(hour=16, minute=0), 
+      end_time = time(hour=17, minute=40), 
+      class_room = '-'
+    ))
+    
+    # morning class have more negative fitness value
+    self.assertLess(
+      FitnessFunction.time_of_day({'course': morning_class}), 
+      FitnessFunction.time_of_day({'course': evening_class})
+    )
+  
+  def test_density_of_day_fitness_function(self):
+    spread_class = CourseClass.objects.create(name = 'Kelas Linear Algebra')
+    spread_class.meetings.add(Meeting.objects.create(
+      day='MON', 
+      start_time = time(hour=8, minute=0), 
+      end_time = time(hour=8, minute=50), 
+      class_room = '-'
+    ))
+    spread_class.meetings.add(Meeting.objects.create(
+      day='MON', 
+      start_time = time(hour=17, minute=0), 
+      end_time = time(hour=17, minute=50), 
+      class_room = '-'
+    ))
+    packed_class = CourseClass.objects.create(name = 'Kelas Data Base')
+    packed_class.meetings.add(Meeting.objects.create(
+      day='MON', 
+      start_time = time(hour=8, minute=0), 
+      end_time = time(hour=8, minute=50), 
+      class_room = '-'
+    ))
+    packed_class.meetings.add(Meeting.objects.create(
+      day='MON', 
+      start_time = time(hour=9, minute=0), 
+      end_time = time(hour=9, minute=50), 
+      class_room = '-'
+    ))
+    
+    # morning class have more negative fitness value
+    self.assertLess(
+      FitnessFunction.density_of_day({'course': packed_class}), 
+      FitnessFunction.density_of_day({'course': spread_class})
+    )
 
 class CourseClassTestCase(TestCase):
   def setUp(self):

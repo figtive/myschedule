@@ -1,5 +1,12 @@
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myschedule.settings")
+import django
+django.setup()
+
 from itertools import combinations
 import copy
+from datetime import time
+from courses.models import Meeting
 
 class Backtracking:
   '''
@@ -140,11 +147,48 @@ class Backtracking:
               return False
     return True
   
-class Fitness:
+class FitnessFunction:
   '''
-  TODO: this class will have functions to order assignments
-  of course to class based on preference.
+  have functions to return fitness value of  assignments of course to class 
+  based on preference, prefernce include morning/evening class, tight/spread schedule
+  '''
+  MIDDLE_VALUE_TIME_OF_DAY = 12
+  NO_CLASS_DAY_WEIGHT = -30
 
-  prefernce include morning/evening class, tight/spread schedule
-  '''
-  pass
+  @staticmethod
+  def time_of_day(class_schedule):
+    '''
+    returns integer, more negative value indicates more classes held 
+    in morning and vice versa for more positive value
+    '''
+    fitness_value = 0
+    for _, class_ in class_schedule.items():
+      for meeting in class_.meetings.all():
+        fitness_value += meeting.start_time.hour - FitnessFunction.MIDDLE_VALUE_TIME_OF_DAY
+    
+    return fitness_value
+
+  @staticmethod
+  def density_of_day(class_schedule):
+    '''
+    returns integer, more negative value indicates class schedule 
+    more packed and vice versa for more positive value
+    '''
+    # setup dictionary for list of meetings each day
+    day_to_meetings = {}
+    for _, class_ in class_schedule.items():
+      for meeting in class_.meetings.all():
+        if meeting.day in day_to_meetings:
+          day_to_meetings[meeting.day].append(meeting)
+        else:
+          day_to_meetings[meeting.day] = [meeting]
+    # prefer more days with no classes on packed schedule
+    no_class_day_count = len(Meeting.DAY_CHOICES) - len(day_to_meetings.keys())
+    fitness_value = 0
+    for day_code, _ in Meeting.DAY_CHOICES:
+      if day_code in day_to_meetings:
+        for m1, m2 in combinations(day_to_meetings[day_code], 2):
+          # use difference in start hour of class on same day for fitness value
+          fitness_value += abs(m1.start_time.hour - m2.start_time.hour)
+
+    return fitness_value + no_class_day_count*FitnessFunction.NO_CLASS_DAY_WEIGHT
