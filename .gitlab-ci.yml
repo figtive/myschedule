@@ -7,7 +7,7 @@ coverage:
   image: python:3.6
   stage: test
   before_script:
-    - pip install coverage
+    - pip install -r requirements.txt
   when: on_success
   script:
     - coverage run --source='courses' manage.py test
