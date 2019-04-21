@@ -49,7 +49,6 @@ class Backtracking:
     self.variable_to_domain, returning a dictionary of
     assignments or None if no possible assignment
     '''
-    self.push_variable_to_legal_values_state()
     if self.all_variable_is_assigned():
       self.solutions.append(copy.deepcopy(self.assignments))
       self.pop_variable_to_legal_values_state()
@@ -57,12 +56,14 @@ class Backtracking:
     variable = self.get_unassigned_variable()
     while(True):
       value = self.get_legal_value(variable)
-      self.do_forward_chaining(variable, value)
+      self.push_variable_to_legal_values_state()
       if value == None:
         self.assignments[variable] = None
+        self.pop_variable_to_legal_values_state()
         self.variable_to_legal_values = self.pop_variable_to_legal_values_state()
         break
       self.assignments[variable] = value
+      self.do_forward_check(variable)
       if self.constraint_is_satisfied():
         self.get_solution_helper()
       else:
@@ -86,24 +87,24 @@ class Backtracking:
   
   def get_unassigned_variable(self):
     '''
-    return first unassigned variable when iterating assignments
-    dictionary or None if all are assigned
-
-    TODO: instead of random, pick most contrained variable, 
-    i.e. variable that has fewest legal values
+    return most constrained unassigned variable
     '''
-    for key, value in self.assignments.items():
-      if value == None:
-        return key
-    return None
-  
+
+    sort_by_least_legal_value = sorted(
+      [(variable, values) for variable, values in self.variable_to_legal_values.items() 
+          if self.assignments[variable] == None], 
+      key=lambda e: len(e[1])
+    )
+    
+    return sort_by_least_legal_value[0][0] if len(sort_by_least_legal_value) > 0 else None
+
   def get_legal_value(self, variable):
     '''
     remove last legal value in list of legal values and 
     return it or None if no posible value for variable
-
-    TODO: instead of random, pick least constraining value
     '''
+    if variable == None:
+      return None
     if self.variable_to_legal_values[variable]:
       return self.variable_to_legal_values[variable].pop()
     else:
@@ -124,14 +125,18 @@ class Backtracking:
         return False
     return True
   
-  def do_forward_chaining(self, variable, value):
+  def do_forward_check(self, assigned_variable):
     '''
     remove values from legal values in self.variable_to_legal_values 
-    that break constraint after assignment specified in argument
-
-    TODO: implement above 
+    that break constraint after variable in argument is assigned
     '''
-    pass
+    for other_variable in self.variable_to_legal_values:
+      # if unassigned and not same variable
+      if self.assignments[other_variable] == None and other_variable != assigned_variable:
+        for value_to_be_checked in self.variable_to_legal_values[other_variable]:
+          # if break constraint
+          if not self.constraint_function(self.assignments[assigned_variable], value_to_be_checked):
+            self.variable_to_legal_values[other_variable].remove(value_to_be_checked)
   
 class Fitness:
   '''
