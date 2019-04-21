@@ -7,8 +7,7 @@ coverage:
   image: python:3.6
   stage: test
   before_script:
-    - pip install pipenv
-    - pipenv install
+    - pip install coverage
   when: on_success
   script:
     - coverage run --source='courses' manage.py test
