@@ -31,6 +31,15 @@ class BacktrackingTest(TestCase):
     self.assertTrue({"a": 1, "b": 2, "c": 3} in result)
     self.assertTrue({"a": 1, "b": 3, "c": 2} in result)
 
+  def test_simple_backtracking_without_solution(self):
+    bt = Backtracking()
+    bt.add_variable("a", [1])
+    bt.add_variable("b", [1])
+    bt.add_variable("c", [2,3,4,5])
+    bt.add_binary_constraint_to_all(lambda x, y: x != y)
+    result = bt.get_solutions()
+    self.assertEqual(len(result), 0)
+
   def test_simple_bt_with_solution_of_ki_data(self):
     # populate test database with s1_ki.json data
     data_dir = finders.find('data/s1_ki.json')

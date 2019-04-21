@@ -41,7 +41,7 @@ class Backtracking:
   def get_solutions(self):
     if self.solutions == []:
       self.get_solution_helper()
-    return self.solutions if len(self.solutions) > 0 else None
+    return self.solutions
 
   def get_solution_helper(self):
     '''
@@ -63,11 +63,10 @@ class Backtracking:
         self.variable_to_legal_values = self.pop_variable_to_legal_values_state()
         break
       self.assignments[variable] = value
-      self.do_forward_check(variable)
-      if self.constraint_is_satisfied():
-        self.get_solution_helper()
-      else:
+      if not self.do_forward_check(variable) or not self.constraint_is_satisfied():
         self.assignments[variable] = None
+      else:
+        self.get_solution_helper()
   
   def pop_variable_to_legal_values_state(self):
     return self.saved_states.pop() if len(self.saved_states) > 0 else None
@@ -137,6 +136,9 @@ class Backtracking:
           # if break constraint
           if not self.constraint_function(self.assignments[assigned_variable], value_to_be_checked):
             self.variable_to_legal_values[other_variable].remove(value_to_be_checked)
+            if self.variable_to_legal_values[other_variable] == []:
+              return False
+    return True
   
 class Fitness:
   '''
