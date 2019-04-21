@@ -40,10 +40,25 @@ class Backtracking:
     self.constraint_function = lambda_func
     self.binary_contraints = list(combinations(list(self.variable_to_domain.keys()), 2))
   
-  def get_solution(self):
+  def get_solution(self, morning_preference = None, packed_preference = None):
     if self.solutions == []:
       self.get_solution_helper()
-    return self.solutions[0] if len(self.solutions) > 0 else None
+    time_preference = 0
+    density_preference = 0
+    if morning_preference == True:
+      time_preference = 1
+    if morning_preference == False:
+      time_preference = -1
+    if packed_preference == True:
+      density_preference = 1
+    if packed_preference == False:
+      density_preference = -1
+    key_for_sort = lambda e: \
+        time_preference*FitnessFunction.time_of_day(e) + \
+        density_preference*FitnessFunction.density_of_day(e)
+    
+    sorted_by_preference = sorted(self.solutions, key=key_for_sort)
+    return sorted_by_preference[0] if len(sorted_by_preference) > 0 else None
 
   def get_solutions(self):
     if self.solutions == []:

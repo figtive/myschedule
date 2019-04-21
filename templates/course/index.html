@@ -8,6 +8,21 @@
 <div id='calendar'></div>
 <form action="{% url 'courses:solve' %}" id="course-form" method="post">
   {% csrf_token %}
+  <div>
+    <h3>preference</h3>
+    <label for="time_preference">Time of class preference</label>
+    <select name="time_preference" id="time_preference">
+      <option value="morning">prefer morning class</option>
+      <option value="default" selected>no preference</option>
+      <option value="evening">prefer evening class</option>
+    </select>
+    <label for="density_preference">Density of schedule preference</label>
+    <select name="density_preference" id="density_preference">
+      <option value="packed">prefer packed schedule</option>
+      <option value="default" selected>no preference</option>
+      <option value="spread">prefer spread schedule</option>
+    </select>
+  </div>
   <div style="display: flex;">
     {% for department in data %}
     <div style="display: inline-block; width: 33%;">

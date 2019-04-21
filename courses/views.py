@@ -44,21 +44,33 @@ def api_course_show(request, id):
 @require_http_methods((["POST"]))
 def solve(request):
   if request.method == 'POST':
-    json = {'data': {'selected': loads(request.body.decode("utf-8"))['check']}}
-
+    request_body_dict = loads(request.body.decode("utf-8"))
+    json = {'data': {'selected': request_body_dict['check']}}
+    json['data']['time_preference'] = request_body_dict['time_preference']
+    json['data']['density_preference'] = request_body_dict['density_preference']
     bt = Backtracking()
     for course_id in json['data']['selected']:
       course_obj = Course.objects.get(id=course_id)
       bt.add_variable(course_obj, list(course_obj.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
 
-    result_obj = bt.solve()
+    morning_bool = None
+    packed_bool = None
+    if request_body_dict['time_preference'] == 'morning':
+      morning_bool = True
+    if request_body_dict['time_preference'] == 'evening':
+      morning_bool = False
+    if request_body_dict['density_preference'] == 'packed':
+      packed_bool = True
+    if request_body_dict['density_preference'] == 'spread':
+      packed_bool = False
+
+    result_obj = bt.get_solution(morning_preference=morning_bool, packed_preference=packed_bool)
     result_list = []
     if result_obj:
       for course, class_ in result_obj.items():
         result_list.append({'course':SimpleCourseSerializer(course).data, 'class': CourseClassSerializer(class_).data})
     json['data']['result'] = result_list
-    
     return JsonResponse(json, json_dumps_params={'indent': 2})
 
 def fill(request):

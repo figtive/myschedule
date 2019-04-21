@@ -33,7 +33,6 @@ $(document).ready(function() {
         }
       },
       success: function(result){
-        // console.log(result)
         addEventsToCalendar(result)
       },
       fail: function(xhr, ajaxOptions, thrownError){
