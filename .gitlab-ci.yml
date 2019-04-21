@@ -8,7 +8,6 @@ coverage:
   stage: test
   before_script:
     - pip install pipenv
-    - pipenv shell
     - pipenv install
   when: on_success
   script:
