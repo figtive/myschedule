@@ -20,12 +20,17 @@ module.exports = {
         }
       },
       {
-        test: /\.css$/,
+        test: /(\.scss$)|(\.css$)/,
         include: [
           path.join(__dirname, "static/css"), 
           path.join(__dirname, "node_modules")
         ],
-        use:  ['style-loader', MiniCssExtractPlugin.loader, 'css-loader']
+        use: [
+          "style-loader",
+          MiniCssExtractPlugin.loader,
+          "css-loader",
+          "sass-loader"
+        ]
       }
     ]
   }, 
