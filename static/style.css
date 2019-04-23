@@ -9423,6 +9423,16 @@ be a descendant of the grid when it is being dragged.
 .fc-today {
   background-color: inherit !important; }
 
+#calendar {
+  min-width: 769px; }
+
+#calendar-container {
+  overflow-x: auto; }
+
+label {
+  padding: 0.2rem;
+  display: flex !important; }
+
 input[type=checkbox] + label {
   display: block;
   margin: 0.2em;
@@ -9442,9 +9452,12 @@ input[type=checkbox] + label:before {
   padding-left: 0.2em;
   padding-bottom: 0.3em;
   margin-right: 0.2em;
-  vertical-align: bottom;
+  margin-left: 0.5rem;
+  margin-top: 1.75rem;
+  vertical-align: top !important;
   color: transparent;
-  transition: .2s; }
+  transition: .2s;
+  flex-basis: 1.5rem; }
 
 input[type=checkbox] + label:active:before {
   transform: scale(0); }
@@ -9462,4 +9475,19 @@ input[type=checkbox]:checked:disabled + label:before {
   transform: scale(1);
   background-color: #bfb;
   border-color: #bfb; }
+
+.card {
+  margin-bottom: 0.5rem; }
+  .card:last-child {
+    margin-bottom: 0; }
+
+.tab-selection {
+  max-height: 50rem;
+  overflow-y: auto; }
+
+.selected-classes {
+  margin-top: 1.5rem; }
+
+.padding-small {
+  padding: 0.5rem; }
 

@@ -3,6 +3,33 @@ import { addEventsToCalendar } from './add-event';
 var $ = require("jquery");
 
 $(document).ready(function() {
+  var selectedCourseCount = 0;
+
+  $('#unselect-all').click(function() {
+    $("input:checkbox").prop('checked', false);
+    $(".selected-courses").text('')
+    $('#selected-course-count').text(0);
+  })
+
+  $("input:checkbox").change(function() {
+    var courseName = $(this).attr("data-course-name")
+    if($(this).prop('checked')) {
+      updateSelectedCourseCountCounter(true)
+      $(".selected-courses").prepend(`<div class="card padding-small">${courseName}</div>`)
+    } else {
+      updateSelectedCourseCountCounter(false)
+      $(".selected-courses").find(`div:contains(${courseName})`).eq(0).remove()
+    }
+  })
+
+  function updateSelectedCourseCountCounter(increment = true) {
+    if (increment)
+      selectedCourseCount++;
+    else if (!increment && selectedCourseCount >= 1)
+      selectedCourseCount--;
+    $('#selected-course-count').text(selectedCourseCount);
+  }
+
   $('form#course-form').on("submit", function(event) {
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "slow");
@@ -35,6 +62,21 @@ $(document).ready(function() {
       },
       success: function(result){
         addEventsToCalendar(result)
+        var contentAdded = '<h2 class="title is-5">selected classes</h2>';
+        var i, courseInfo, classInfo;
+        for (var i in result.data.result) {
+          courseInfo = result.data.result[i].course.course_name
+          classInfo = result.data.result[i].class.name
+          contentAdded += 
+          `<div class="card">
+            <div class="card-content padding-small">
+              <strong>${courseInfo}</strong><br>
+              ${classInfo}
+            </div>
+          </div>`
+        }
+
+        $(".selected-classes").html(contentAdded)
       },
       fail: function(xhr, ajaxOptions, thrownError){
         console.log(xhr.status);

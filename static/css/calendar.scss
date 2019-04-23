@@ -1,3 +1,11 @@
 .fc-today {
   background-color:inherit !important;
 }
+
+#calendar {
+  min-width: 769px;
+}
+
+#calendar-container {
+  overflow-x: auto; 
+}

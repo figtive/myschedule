@@ -15,3 +15,5 @@ import "../node_modules/@fullcalendar/timegrid/main.css";
 // custom css
 import "./css/calendar.scss";
 import "./css/checkbox.scss";
+import "./css/bulma-overwrite.scss";
+import "./css/custom.scss";

@@ -1,4 +1,8 @@
 // source https://codepen.io/zFunx/pen/dWbevd, modified as needed
+label {
+    padding: 0.2rem;
+    display: flex !important;
+}
 
 input[type=checkbox] + label {
     display: block;
@@ -21,9 +25,12 @@ input[type=checkbox] + label:before {
     padding-left: 0.2em;
     padding-bottom: 0.3em;
     margin-right: 0.2em;
-    vertical-align: bottom;
+    margin-left: 0.5rem;
+    margin-top: 1.75rem;
+    vertical-align: top !important;
     color: transparent;
     transition: .2s;
+    flex-basis: 1.5rem;
 }
 
 input[type=checkbox] + label:active:before {
