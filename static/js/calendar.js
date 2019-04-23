@@ -12,29 +12,32 @@ $(document).ready(function() {
     plugins: [ timeGridPlugin ],
     defaultView: 'timeGridWeek',
     allDaySlot: false,
-    slotDuration: '00:30:00',
-    minTime: '08:00:00',
-    maxTime: '19:00:00',
+    slotDuration: '00:30:00', // each time row is 30 min
+    minTime: '08:00:00', // start from 8.00
+    maxTime: '19:00:00', // end in 19.00
     height: 'auto',
     nowIndicator: false,
-    header: {
+    header: { // display empty header
       left: '',
       center: '',
       right: ''
     },
-    slotLabelFormat: {
+    slotLabelFormat: { // format time as HH:MM
       hour: '2-digit',
       minute: '2-digit',
       hour12: false
     },
-    columnHeaderFormat: { 
+    columnHeaderFormat: { // display Monday, .. as column header
       weekday: 'long' 
-    }
+    },
+    hiddenDays: [ 0 ], // hide sunday
+    firstDay: 1 // show monday first
   });
 
   calendar.render();
 });
 
+// get calendar variable, used in other js files
 export function getCalendar(){
   return calendar;
 }

@@ -4,6 +4,16 @@
 {% block title %}MySchedule{% endblock %}
 
 {% block content %}
-  <h1>Welcome to MySchedule</h1>
-  <a href="{% url 'courses:courses_index' %}">courses</a>
+<section class="hero is-fullheight">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        MySchedule
+      </h1>
+      <h2 class="subtitle">
+          <a href="{% url 'courses:courses_index' %}">start arranging your schedule now</a>
+      </h2>
+    </div>
+  </div>
+</section>
 {% endblock %}

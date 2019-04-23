@@ -4,79 +4,61 @@
 {% block title %}MySchedule | Courses{% endblock %}
 
 {% block content %}
-<h1>Courses</h1>
-<div id='calendar'></div>
-<form action="{% url 'courses:solve' %}" id="course-form" method="post">
-  {% csrf_token %}
-  <div>
-    <h3>preference</h3>
-    <label for="time_preference">Time of class preference</label>
-    <select name="time_preference" id="time_preference">
-      <option value="morning">prefer morning class</option>
-      <option value="default" selected>no preference</option>
-      <option value="evening">prefer evening class</option>
-    </select>
-    <label for="density_preference">Density of schedule preference</label>
-    <select name="density_preference" id="density_preference">
-      <option value="packed">prefer packed schedule</option>
-      <option value="default" selected>no preference</option>
-      <option value="spread">prefer spread schedule</option>
-    </select>
-  </div>
-  <div style="display: flex;">
-    {% for department in data %}
-    <div style="display: inline-block; width: 33%;">
-      <h3>{{ department.name }}</h3>
-      {% for course in department.courses %}
-      <div style="display: flex; align-items: flex-start;">
-        <input type="checkbox" id="{{ forloop.counter }}" value="{{ course.id }}" name="check">
-        <div style="display: inline-block;">
-          <label for="{{ forloop.counter }}">
-            {{ course.course_code }} - {{ course.course_name }}<br>
-            term {{ course.term }} - sks {{ course.sks }}
-          </label>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-    {% endfor %}
-  </div>
-  <button type="submit" id="course-form-submit">Submit</button>
-</form>
-{% endblock %}
-
-<!-- <!DOCTYPE html>
-<html>
-<head>
-  <title>MySchedule</title>
-  <link href="{% static 'style.css' %}" rel="stylesheet">
-</head>
-<body>
-  <h1>Courses</h1>
-  <div id='calendar'></div>
-  <form action="{% url 'courses:solve' %}" id="course-form" method="post">
-    {% csrf_token %}
-    <div style="display: flex;">
-      {% for department in data %}
-      <div style="display: inline-block; width: 33%;">
-        <h3>{{ department.name }}</h3>
-        {% for course in department.courses %}
-        <div style="display: flex; align-items: flex-start;">
-          <input type="checkbox" id="{{ forloop.counter }}" value="{{ course.id }}" name="check">
-          <div style="display: inline-block;">
-            <label for="{{ forloop.counter }}">
-              {{ course.course_code }} - {{ course.course_name }}<br>
-              term {{ course.term }} - sks {{ course.sks }}
-            </label>
+<div class="container">
+  <section class="section">
+    <div id='calendar'></div>
+  </section>
+  <section class="section">
+    <form action="{% url 'courses:solve' %}" id="course-form" method="post">
+      {% csrf_token %}
+      <div class="columns is-mobile">
+        <div class="column is-9">
+          <h2 class="title">Select courses</h2>
+          <div class="tabs">
+            <ul>
+              {% for department in data %}
+              <li><a>{{ department.name }}</a></li>
+              {% endfor %}
+            </ul>
+          </div>
+          <div class="tabs-content">
+            {% for department in data %}
+            <div class="tab-selection">
+              {% for course in department.courses %}
+              <input type="checkbox" id="{{ forloop.parentloop.counter }}-{{ forloop.counter }}" value="{{ course.id }}" name="check">
+              <label for="{{ forloop.parentloop.counter }}-{{ forloop.counter }}">
+                  {{ course.course_code }} - {{ course.course_name }}<br>
+                  term {{ course.term }} - sks {{ course.sks }}
+              </label>
+              {% endfor %}
+            </div>
+            {% endfor %}
           </div>
         </div>
-        {% endfor %}
+        <div class="column is-3">
+          <button class="button is-large is-fullwidth" type="submit" id="course-form-submit">Submit</button>
+          <div>
+            <label for="time_preference">Time of class preference</label>
+            <div class="select is-multiple">
+              <select multiple size="3" name="time_preference" id="time_preference" style="overflow: hidden;">
+                <option value="morning">prefer morning class</option>
+                <option value="default" selected>no preference</option>
+                <option value="evening">prefer evening class</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label for="density_preference">Density of schedule preference</label>
+            <div class="select is-multiple">
+              <select multiple size="3" name="density_preference" id="density_preference" style="overflow: hidden;">
+                <option value="packed">prefer packed schedule</option>
+                <option value="default" selected>no preference</option>
+                <option value="spread">prefer spread schedule</option>
+              </select>
+            </div>
+          </div>
+        </div>
       </div>
-      {% endfor %}
-    </div>
-    <button type="submit" id="course-form-submit">Submit</button>
-  </form>
-
-  <script src="{% static 'script.js' %}"></script>
-</body>
-</html> -->
+    </form>
+  </section>
+{% endblock %}

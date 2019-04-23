@@ -5,6 +5,7 @@ var $ = require("jquery");
 $(document).ready(function() {
   $('form#course-form').on("submit", function(event) {
     event.preventDefault();
+    $("html, body").animate({ scrollTop: 0 }, "slow");
 
     var data = $(this).serializeArray().reduce(function(obj, item) {
       if (item.name === 'check') {
