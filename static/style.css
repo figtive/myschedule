@@ -9425,6 +9425,14 @@ be a descendant of the grid when it is being dragged.
 
 #calendar {
   min-width: 769px; }
+  #calendar td {
+    height: 1.75em; }
+  #calendar .fc-time-grid-event .fc-content {
+    overflow: visible;
+    color: black;
+    margin: 0.25rem; }
+  #calendar .fc-event {
+    background-color: #5998d6; }
 
 #calendar-container {
   overflow-x: auto; }

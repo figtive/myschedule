@@ -14,7 +14,7 @@ $(document).ready(function() {
     allDaySlot: false,
     slotDuration: '00:30:00', // each time row is 30 min
     minTime: '08:00:00', // start from 8.00
-    maxTime: '19:00:00', // end in 19.00
+    maxTime: '18:00:00', // end in 18.00
     height: 'auto',
     nowIndicator: false,
     header: { // display empty header
