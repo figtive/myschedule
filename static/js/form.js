@@ -48,6 +48,7 @@ $(document).ready(function() {
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "slow");
     getCalendar().removeAllEvents();
+    clearSelectedClass();
 
     var data = $(this).serializeArray().reduce(function(obj, item) {
       if (item.name === 'check') {
@@ -82,7 +83,7 @@ $(document).ready(function() {
         }
         $('.modal#success').addClass('is-active')
         addEventsToCalendar(result)
-        var contentAdded = '<h2 class="title is-5">selected classes</h2>';
+        var contentAdded = '';
         var i, courseInfo, classInfo;
         for (var i in result.data.result) {
           courseInfo = result.data.result[i].course.course_name
@@ -116,3 +117,7 @@ $(document).ready(function() {
     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
   }
 });
+
+function clearSelectedClass() {
+  $(".selected-classes").html('')
+}
