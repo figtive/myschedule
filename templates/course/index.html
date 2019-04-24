@@ -1,0 +1,127 @@
+{% extends '_base.html' %}
+{% load static %}
+
+{% block title %}MySchedule | Courses{% endblock %}
+
+{% block content %}
+<div class="container">
+  <section class="section">
+    <div class="columns">
+      <div class="column is-10">
+        <div id='calendar-container'>
+          <div id='calendar'></div>
+        </div>
+      </div>
+      <div class="column is-2">
+        <div class="selected-classes">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <form action="{% url 'courses:solve' %}" id="course-form" method="post">
+      {% csrf_token %}
+      <div class="columns">
+        <div class="column is-9">
+          <h2 class="title">Select courses</h2>
+          <div class="tabs">
+            <ul style="justify-content: space-between;">
+              <div style="display: flex;">
+                {% for department in data %}
+                <li><a class="title is-5">{{ department.name }}</a></li>
+                {% endfor %}
+              </div>
+              <div class="button" id="unselect-all">unselect all</div>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="columns">
+        <div class="column is-9">
+          <div class="tabs-content">
+            {% for department in data %}
+            <div class="tab-selection">
+              {% for course in department.courses %}
+              <div class="card">
+                <input type="checkbox" data-course-code="{{ course.course_code }}" data-course-name="{{ course.course_name }}" id="{{ forloop.parentloop.counter }}-{{ forloop.counter }}" value="{{ course.id }}" name="check">
+                <label for="{{ forloop.parentloop.counter }}-{{ forloop.counter }}">
+                  <div class="card-content" style="display: inline-block;">
+                    <p class="title is-5">
+                      {{ course.course_code }} {{ course.course_name }}
+                    </p>
+                    <p class="subtitle is-5">
+                      {{ course.term }} term<br>
+                      {{ course.sks }} credits
+                      {% if course.prerequisites %}
+                      <br>prerequisites<br>
+                      {% for pre in course.prerequisites %}
+                      {% if forloop.first == False %}, {% endif %}{{ pre.course_code }} {{ pre.course_name }}
+                      {% endfor %}
+                      {% endif %}
+                    </p>
+                  </div>
+                </label>
+              </div>
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="column is-3">
+          <div class="field">
+            <button class="button is-large is-fullwidth is-link" type="submit" id="course-form-submit">Submit</button>
+          </div>
+          <div class="field">
+            <label for="time_preference">Time of class preference</label>
+            <div class="control">
+              <div class="select">
+                <select name="time_preference" id="time_preference" style="overflow: hidden;">
+                  <option value="morning">prefer morning class</option>
+                  <option value="default" selected>no preference</option>
+                  <option value="evening">prefer evening class</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="density_preference">Density of schedule preference</label>
+            <div class="control">
+              <div class="select">
+                <select name="density_preference" id="density_preference" style="overflow: hidden;">
+                  <option value="packed">prefer packed schedule</option>
+                  <option value="default" selected>no preference</option>
+                  <option value="spread">prefer spread schedule</option>
+                </select>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h2 class="title is-5"><span id="selected-course-count">0</span> course(s) selected</h2>
+            <div class="selected-courses">
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+  <div class="modal" id="success">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        schedule found! check it out
+      </section>
+    </div>
+  </div>
+  <div class="modal" id="fail">
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        no possible schedule found
+      </section>
+    </div>
+  </div>
+{% endblock %}

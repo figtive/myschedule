@@ -1,0 +1,25 @@
+.fc-today {
+  background-color:inherit !important;
+}
+
+#calendar {
+  min-width: 769px;
+  
+  td {
+    height: 1.75em;
+  }
+
+  .fc-time-grid-event .fc-content {
+    overflow: visible;
+    color: black;
+    margin: 0.25rem;
+  }
+
+  .fc-event {
+    background-color: #5998d6;
+  }
+}
+
+#calendar-container {
+  overflow-x: auto; 
+}

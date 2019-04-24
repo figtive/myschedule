@@ -277,12 +277,6 @@
                             "start": "10.00",
                             "end": "11.40",
                             "class": "A2.08 (Ged Baru)"
-                        },
-                        {
-                            "day": "Senin",
-                            "start": "16.00",
-                            "end": "17.40",
-                            "class": "Lab A1.04 (Ged baru)"
                         }
                     ],
                     "lecturer": [
@@ -802,18 +796,6 @@
                             "start": "16.00",
                             "end": "17.40",
                             "class": "2.2304"
-                        },
-                        {
-                            "day": "Senin",
-                            "start": "16.00",
-                            "end": "17.40",
-                            "class": "2.2304"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "16.00",
-                            "end": "17.40",
-                            "class": "2.2304"
                         }
                     ],
                     "lecturer": [
@@ -1011,18 +993,6 @@
                             "start": "08.00",
                             "end": "09.40",
                             "class": "2.2307"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "16.00",
-                            "end": "17.40",
-                            "class": "Lab.1101/1103"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "16.00",
-                            "end": "17.40",
-                            "class": "Lab.1101/1103"
                         }
                     ],
                     "lecturer": [
@@ -1050,18 +1020,6 @@
                             "start": "08.00",
                             "end": "09.40",
                             "class": "2.2402"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "16.00",
-                            "end": "17.40",
-                            "class": "Lab.1107/1109"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "16.00",
-                            "end": "17.40",
-                            "class": "Lab.1107/1109"
                         }
                     ],
                     "lecturer": [
@@ -1089,18 +1047,6 @@
                             "start": "14.00",
                             "end": "15.40",
                             "class": "2.2602"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "16.00",
-                            "end": "17.40",
-                            "class": "Lab.2.2601"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "16.00",
-                            "end": "17.40",
-                            "class": "Lab.2.2601"
                         }
                     ],
                     "lecturer": [
@@ -1142,18 +1088,6 @@
                             "start": "08.00",
                             "end": "09.40",
                             "class": "3.3113"
-                        },
-                        {
-                            "day": "Senin",
-                            "start": "13.00",
-                            "end": "14.40",
-                            "class": "Lab.1106"
-                        },
-                        {
-                            "day": "Rabu",
-                            "start": "08.00",
-                            "end": "09.40",
-                            "class": "Lab.2.2601"
                         }
                     ],
                     "lecturer": [
@@ -1313,18 +1247,6 @@
                             "start": "16.00",
                             "end": "16.50",
                             "class": "Lab.1101/1103"
-                        },
-                        {
-                            "day": "Jumat",
-                            "start": "16.00",
-                            "end": "16.50",
-                            "class": "Lab.2.2601"
-                        },
-                        {
-                            "day": "Jumat",
-                            "start": "16.00",
-                            "end": "16.50",
-                            "class": "Lab.1107/1109"
                         }
                     ],
                     "lecturer": [
@@ -1445,18 +1367,6 @@
                             "start": "10.00",
                             "end": "12.30",
                             "class": "2.2405"
-                        },
-                        {
-                            "day": "Selasa",
-                            "start": "10.00",
-                            "end": "12.30",
-                            "class": "2.2406"
-                        },
-                        {
-                            "day": "Kamis",
-                            "start": "10.00",
-                            "end": "12.30",
-                            "class": "2.2406"
                         }
                     ],
                     "lecturer": [

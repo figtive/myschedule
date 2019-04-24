@@ -1,3 +1,5 @@
+[![pipeline status](https://gitlab.com/myschedule/myschedule/badges/master/pipeline.svg)](https://gitlab.com/myschedule/myschedule/commits/master) [![coverage report](https://gitlab.com/myschedule/myschedule/badges/master/coverage.svg)](https://gitlab.com/myschedule/myschedule/commits/master)
+
 # MySchedule
 
 MySchedule is a website to help users to schedule their college subject time table. Users can choose their desired courses from all term. To arrange the schedule, the user just need to choose the courses that they want to take.
