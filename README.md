@@ -1,4 +1,4 @@
-[![pipeline status](https://gitlab.com/myschedule/myschedule/badges/dev/pipeline.svg)](https://gitlab.com/myschedule/myschedule/commits/dev) [![coverage report](https://gitlab.com/myschedule/myschedule/badges/dev/coverage.svg)](https://gitlab.com/myschedule/myschedule/commits/dev)
+[![pipeline status](https://gitlab.com/myschedule/myschedule/badges/master/pipeline.svg)](https://gitlab.com/myschedule/myschedule/commits/master) [![coverage report](https://gitlab.com/myschedule/myschedule/badges/master/coverage.svg)](https://gitlab.com/myschedule/myschedule/commits/master)
 
 # MySchedule
 
