@@ -43,8 +43,9 @@
             <div class="tab-selection">
               {% for course in department.courses %}
               <div class="card">
-                <input type="checkbox" data-course-code="{{ course.course_code }}" data-course-name="{{ course.course_name }}" id="{{ forloop.parentloop.counter }}-{{ forloop.counter }}" value="{{ course.id }}" name="check">
-                <label for="{{ forloop.parentloop.counter }}-{{ forloop.counter }}">
+                <input type="checkbox" data-course-code="{{ course.course_code }}" data-course-name="{{ course.course_name }}" 
+                    value="{{ course.id }}" name="check">
+                <label for="{{ course.course_code }}">
                   <div class="card-content" style="display: inline-block;">
                     <p class="title is-5">
                       {{ course.course_code }} {{ course.course_name }}

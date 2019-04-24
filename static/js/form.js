@@ -6,6 +6,14 @@ var $ = require("jquery");
 $(document).ready(function() {
   var selectedCourseCount = 0;
 
+  $("form#course-form label").click(function() {
+    var clickedCourseCode = $(this).attr('for');
+    var associatedInput = $("form#course-form").find(`input[data-course-code=${clickedCourseCode}]`);
+    associatedInput.prop('checked', !associatedInput.prop('checked')).each(function(i, obj) {
+      $(obj).change();
+    });
+  })
+
   $(".modal button[aria-label='close']").click(function() {
     $(".modal").removeClass("is-active")
   })
@@ -19,10 +27,10 @@ $(document).ready(function() {
 
   $("input:checkbox").change(function() {
     var courseName = $(this).attr("data-course-name")
-    if($(this).prop('checked')) {
+    if($(this).prop('checked') && $(`.selected-courses:contains(${courseName})`).length==0 ) {
       updateSelectedCourseCountCounter(true)
       $(".selected-courses").prepend(`<div class="card padding-small">${courseName}</div>`)
-    } else {
+    } else if (!$(this).prop('checked')) {
       updateSelectedCourseCountCounter(false)
       $(".selected-courses").find(`div:contains(${courseName})`).eq(0).remove()
     }
