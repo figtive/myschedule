@@ -68,8 +68,11 @@ def solve(request):
     result_obj = bt.get_solution(morning_preference=morning_bool, packed_preference=packed_bool)
     result_list = []
     if result_obj:
+      json['data']['solution_found'] = True
       for course, class_ in result_obj.items():
         result_list.append({'course':SimpleCourseSerializer(course).data, 'class': CourseClassSerializer(class_).data})
+    else:
+      json['data']['solution_found'] = False
     json['data']['result'] = result_list
     return JsonResponse(json, json_dumps_params={'indent': 2})
 

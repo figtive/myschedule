@@ -1,14 +1,20 @@
 import { addEventsToCalendar } from './add-event';
+import { getCalendar } from './calendar';
 
 var $ = require("jquery");
 
 $(document).ready(function() {
   var selectedCourseCount = 0;
 
+  $(".modal button[aria-label='close']").click(function() {
+    $(".modal").removeClass("is-active")
+  })
+
   $('#unselect-all').click(function() {
     $("input:checkbox").prop('checked', false);
-    $(".selected-courses").text('')
-    $('#selected-course-count').text(0);
+    $(".selected-courses").text('');
+    selectedCourseCount = 0
+    $('#selected-course-count').text(selectedCourseCount);
   })
 
   $("input:checkbox").change(function() {
@@ -33,6 +39,7 @@ $(document).ready(function() {
   $('form#course-form').on("submit", function(event) {
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "slow");
+    getCalendar().removeAllEvents();
 
     var data = $(this).serializeArray().reduce(function(obj, item) {
       if (item.name === 'check') {
@@ -61,6 +68,11 @@ $(document).ready(function() {
         }
       },
       success: function(result){
+        if (!result.data.solution_found) {
+          $('.modal#fail').addClass('is-active')
+          return
+        }
+        $('.modal#success').addClass('is-active')
         addEventsToCalendar(result)
         var contentAdded = '<h2 class="title is-5">selected classes</h2>';
         var i, courseInfo, classInfo;

@@ -8,8 +8,6 @@ export function addEventToCalendar(event_dict) {
 }
 
 export function addEventsToCalendar(solve_api) {
-    getCalendar().removeAllEvents();
-
     $(solve_api['data']['result']).each(function(i, course_to_class) {
         $(course_to_class['class']['meetings']).each(function(j, meeting) {
             var event_dict = {}

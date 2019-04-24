@@ -4,3 +4,14 @@
         margin-bottom: 0;
     }
 }
+
+.modal-card-head {
+    background-color: #5998d6; 
+}
+
+.modal-card-body {
+    border: 1px solid black;
+    border-top: none;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
