@@ -9508,3 +9508,78 @@ input[type=checkbox]:checked:disabled + label:before {
 .padding-small {
   padding: 0.5rem; }
 
+svg {
+  display: block; }
+
+.path {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 0; }
+
+.path.circle {
+  -webkit-animation: dash 0.9s ease-in-out;
+  animation: dash 0.9s ease-in-out; }
+
+.path.line {
+  stroke-dashoffset: 1000;
+  -webkit-animation: dash 0.9s 0.35s ease-in-out forwards;
+  animation: dash 0.9s 0.35s ease-in-out forwards; }
+
+.path.check {
+  stroke-dashoffset: -100;
+  -webkit-animation: dash-check 0.9s 0.35s ease-in-out forwards;
+  animation: dash-check 0.9s 0.35s ease-in-out forwards; }
+
+@-webkit-keyframes dash {
+  0% {
+    stroke-dashoffset: 1000; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 1000; }
+  100% {
+    stroke-dashoffset: 0; } }
+
+@-webkit-keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100; }
+  100% {
+    stroke-dashoffset: 900; } }
+
+@keyframes dash-check {
+  0% {
+    stroke-dashoffset: -100; }
+  100% {
+    stroke-dashoffset: 900; } }
+
+.alerts {
+  position: fixed;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3; }
+
+.alert-box {
+  border: 1px solid transparent;
+  border-radius: 4px;
+  display: none;
+  justify-content: center;
+  padding: 0.5rem 2rem;
+  margin-bottom: 0.5rem; }
+  .alert-box:last-child {
+    margin-bottom: 0; }
+  .alert-box .text {
+    line-height: 50px;
+    margin-left: 1rem; }
+
+.success {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6; }
+
+.failure {
+  color: #a94442;
+  background-color: #f2dede;
+  border-color: #ebccd1; }
+

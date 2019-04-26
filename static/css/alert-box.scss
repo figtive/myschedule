@@ -1,0 +1,38 @@
+// source https://codepen.io/sunny_mody/pen/tJloA, modified as needed
+.alerts {
+    position: fixed;
+    top: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+
+.alert-box {
+    border: 1px solid transparent;
+    border-radius: 4px;  
+    display: none;
+    justify-content: center;
+    padding: 0.5rem 2rem;
+    margin-bottom: 0.5rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    .text {
+        line-height: 50px;
+        margin-left: 1rem;
+    }
+}
+
+.success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.failure {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
