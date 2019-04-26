@@ -51,7 +51,7 @@ class Backtracking:
         current_fitness_values.append(fitness_function(assignment))
       max_value = max(current_fitness_values)
       min_value = min(current_fitness_values)
-      current_fitness_values = map(lambda e: (e-min_value)/(max_value-min_value), current_fitness_values)
+      current_fitness_values = map(lambda e: (e-min_value)/(max_value-min_value) if max_value-min_value!=0 else 0, current_fitness_values)
       final_fitness_values = [x + y for x, y in zip(final_fitness_values, current_fitness_values)]
     sorted_by_preference = sorted(
       [(final_fitness_values[i], self.solutions[i]) for i in range(len(self.solutions))], 
