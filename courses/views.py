@@ -8,7 +8,7 @@ from .serializer import *
 from . import utils
 from json import loads
 
-from .backtracking import Backtracking
+from .backtracking import Backtracking, FitnessFunction
 
 @require_http_methods((["GET"]))
 def home_index(request):
@@ -54,18 +54,18 @@ def solve(request):
       bt.add_variable(course_obj, list(course_obj.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
 
-    morning_bool = None
-    packed_bool = None
+    fitness_functions_used = []
     if request_body_dict['time_preference'] == 'morning':
-      morning_bool = True
-    if request_body_dict['time_preference'] == 'evening':
-      morning_bool = False
-    if request_body_dict['density_preference'] == 'packed':
-      packed_bool = True
-    if request_body_dict['density_preference'] == 'spread':
-      packed_bool = False
+      fitness_functions_used.append(FitnessFunction.PREFER_MORNING_CLASS)
+    elif request_body_dict['time_preference'] == 'evening':
+      fitness_functions_used.append(FitnessFunction.PREFER_EVENING_CLASS)
 
-    result_obj = bt.get_solution(morning_preference=morning_bool, packed_preference=packed_bool)
+    if request_body_dict['density_preference'] == 'packed':
+      fitness_functions_used.append(FitnessFunction.PREFER_PACKED_SCHEDULE)
+    elif request_body_dict['density_preference'] == 'spread':
+      fitness_functions_used.append(FitnessFunction.PREFER_SPREAD_SCHEDULE)
+
+    result_obj = bt.get_solution(fitness_functions_used)
     result_list = []
     if result_obj:
       json['data']['solution_found'] = True
