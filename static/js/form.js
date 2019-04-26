@@ -9,14 +9,8 @@ $(document).ready(function() {
   $("form#course-form label").click(function() {
     var clickedCourseCode = $(this).attr('for');
     var associatedInput = $("form#course-form").find(`input[data-course-code=${clickedCourseCode}]`);
-    associatedInput.prop('checked', !associatedInput.prop('checked')).each(function(i, obj) {
-      $(obj).change();
-    });
-  })
-
-  $(".modal button[aria-label='close']").click(function() {
-    $(".modal").removeClass("is-active")
-  })
+    associatedInput.prop('checked', !associatedInput.prop('checked')).eq(0).change();
+  });
 
   $('#unselect-all').click(function() {
     $("input:checkbox").prop('checked', false);
@@ -134,7 +128,7 @@ function notifySuccess() {
             <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
           </svg>
         </div>
-        <span class="text">Successful Alert !!!</span>
+        <span class="text">schedule found!</span>
       </div>
     </div>
   `)
@@ -155,7 +149,7 @@ function notifyFailure() {
             <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"/>
           </svg>
         </div>
-        <span class="text">Failure Alert !!!</span>
+        <span class="text">no possible schedule</span>
       </div>
     </div>
   `)
