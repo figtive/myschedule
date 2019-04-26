@@ -13,8 +13,11 @@
         </div>
       </div>
       <div class="column is-2">
-        <div class="selected-classes">
-        </div>
+        <section>
+          <h2 class="title is-5">selected classes</h2>
+          <div class="selected-classes">
+          </div>
+        </section>
       </div>
     </div>
   </section>
@@ -43,8 +46,9 @@
             <div class="tab-selection">
               {% for course in department.courses %}
               <div class="card">
-                <input type="checkbox" data-course-code="{{ course.course_code }}" data-course-name="{{ course.course_name }}" id="{{ forloop.parentloop.counter }}-{{ forloop.counter }}" value="{{ course.id }}" name="check">
-                <label for="{{ forloop.parentloop.counter }}-{{ forloop.counter }}">
+                <input type="checkbox" data-course-code="{{ course.course_code }}" data-course-name="{{ course.course_name }}" 
+                    value="{{ course.id }}" name="check">
+                <label for="{{ course.course_code }}">
                   <div class="card-content" style="display: inline-block;">
                     <p class="title is-5">
                       {{ course.course_code }} {{ course.course_name }}
@@ -124,4 +128,8 @@
       </section>
     </div>
   </div>
+</div>
+<div class="alerts">
+</div>
+
 {% endblock %}

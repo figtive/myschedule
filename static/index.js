@@ -17,3 +17,5 @@ import "./css/calendar.scss";
 import "./css/checkbox.scss";
 import "./css/bulma-overwrite.scss";
 import "./css/custom.scss";
+import "./css/check-cross.scss";
+import "./css/alert-box.scss";

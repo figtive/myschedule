@@ -106,9 +106,8 @@ class BacktrackingTest(TestCase):
       if course.course_name in selected_courses:
         bt.add_variable(course, list(course.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
-    results  = bt.get_solutions()
-    evening_class_preference = sorted(results, key=FitnessFunction.time_of_day, reverse=True)[0]
-    self.assertTrue('Kelas Anum - A' in [class_.name for class_ in evening_class_preference.values()])
+    result  = bt.get_solution([FitnessFunction.PREFER_EVENING_CLASS])
+    self.assertTrue('Kelas Anum - A' in [class_.name for class_ in result.values()])
   
   def test_density_of_day_preference(self):
     # populate test database with s1_ik.json data
@@ -121,9 +120,8 @@ class BacktrackingTest(TestCase):
     for course in Course.objects.all().filter(term = 4):
       bt.add_variable(course, list(course.course_classes.all()))
     bt.add_binary_constraint_to_all(lambda a, b: not a.clash_with(b))
-    results  = bt.get_solutions()
-    packed_schedule_preference = sorted(results, key=FitnessFunction.density_of_day)[0]
-    self.assertNotEqual(packed_schedule_preference, None)
+    result  = bt.get_solution([FitnessFunction.PREFER_PACKED_SCHEDULE])
+    self.assertNotEqual(result, None)
 
 class FitnessFunctionTestCase(TestCase):
   def test_time_of_day_fitness_value(self):
@@ -144,8 +142,8 @@ class FitnessFunctionTestCase(TestCase):
     
     # morning class have more negative fitness value
     self.assertLess(
-      FitnessFunction.time_of_day({'course': morning_class}), 
-      FitnessFunction.time_of_day({'course': evening_class})
+      FitnessFunction._time_of_day({'course': morning_class}), 
+      FitnessFunction._time_of_day({'course': evening_class})
     )
   
   def test_density_of_day_fitness_function(self):
@@ -178,8 +176,8 @@ class FitnessFunctionTestCase(TestCase):
     
     # morning class have more negative fitness value
     self.assertLess(
-      FitnessFunction.density_of_day({'course': packed_class}), 
-      FitnessFunction.density_of_day({'course': spread_class})
+      FitnessFunction._density_of_day({'course': packed_class}), 
+      FitnessFunction._density_of_day({'course': spread_class})
     )
 
 class CourseClassTestCase(TestCase):

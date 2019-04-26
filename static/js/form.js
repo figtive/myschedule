@@ -6,9 +6,11 @@ var $ = require("jquery");
 $(document).ready(function() {
   var selectedCourseCount = 0;
 
-  $(".modal button[aria-label='close']").click(function() {
-    $(".modal").removeClass("is-active")
-  })
+  $("form#course-form label").click(function() {
+    var clickedCourseCode = $(this).attr('for');
+    var associatedInput = $("form#course-form").find(`input[data-course-code=${clickedCourseCode}]`);
+    associatedInput.prop('checked', !associatedInput.prop('checked')).eq(0).change();
+  });
 
   $('#unselect-all').click(function() {
     $("input:checkbox").prop('checked', false);
@@ -19,10 +21,10 @@ $(document).ready(function() {
 
   $("input:checkbox").change(function() {
     var courseName = $(this).attr("data-course-name")
-    if($(this).prop('checked')) {
+    if($(this).prop('checked') && $(`.selected-courses:contains(${courseName})`).length==0 ) {
       updateSelectedCourseCountCounter(true)
       $(".selected-courses").prepend(`<div class="card padding-small">${courseName}</div>`)
-    } else {
+    } else if (!$(this).prop('checked')) {
       updateSelectedCourseCountCounter(false)
       $(".selected-courses").find(`div:contains(${courseName})`).eq(0).remove()
     }
@@ -40,6 +42,7 @@ $(document).ready(function() {
     event.preventDefault();
     $("html, body").animate({ scrollTop: 0 }, "slow");
     getCalendar().removeAllEvents();
+    clearSelectedClass();
 
     var data = $(this).serializeArray().reduce(function(obj, item) {
       if (item.name === 'check') {
@@ -69,12 +72,14 @@ $(document).ready(function() {
       },
       success: function(result){
         if (!result.data.solution_found) {
-          $('.modal#fail').addClass('is-active')
+            // $( ".alert-box.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+          notifyFailure()
           return
         }
-        $('.modal#success').addClass('is-active')
+        // $('.alert-box.success').fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
+        notifySuccess()
         addEventsToCalendar(result)
-        var contentAdded = '<h2 class="title is-5">selected classes</h2>';
+        var contentAdded = '';
         var i, courseInfo, classInfo;
         for (var i in result.data.result) {
           courseInfo = result.data.result[i].course.course_name
@@ -108,3 +113,48 @@ $(document).ready(function() {
     return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
   }
 });
+
+function clearSelectedClass() {
+  $(".selected-classes").html('')
+}
+
+function notifySuccess() {
+  const successAlertBox = $(`
+    <div class="alert-box success">
+      <div style="display: flex;">
+        <div style="height: 50px; width: 50px; display: inline-block">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="#73AF55" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+            <polyline class="path check" fill="none" stroke="#73AF55" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" points="100.2,40.2 51.5,88.8 29.8,67.5 "/>
+          </svg>
+        </div>
+        <span class="text">schedule found!</span>
+      </div>
+    </div>
+  `)
+  $(".alerts").prepend(successAlertBox);
+  successAlertBox.fadeIn( 300 ).delay( 1500 ).fadeOut( 400, function() {
+    $(this).remove();
+  })
+}
+
+function notifyFailure() {
+  const failureAlertBox = $(`
+    <div class="alert-box failure">
+      <div style="display: flex;">
+        <div style="height: 50px; width: 50px; display: inline-block">
+          <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+            <circle class="path circle" fill="none" stroke="#D06079" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+            <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3"/>
+            <line class="path line" fill="none" stroke="#D06079" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"/>
+          </svg>
+        </div>
+        <span class="text">no possible schedule</span>
+      </div>
+    </div>
+  `)
+  $(".alerts").prepend(failureAlertBox);
+  failureAlertBox.fadeIn( 300 ).delay( 1500 ).fadeOut( 400, function() {
+    $(this).remove();
+  })
+}

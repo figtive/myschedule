@@ -6,7 +6,8 @@ django.setup()
 from itertools import combinations
 import copy
 from datetime import time
-from courses.models import Meeting
+# from courses.models import Meeting
+from courses.models import *
 
 class Backtracking:
   '''
@@ -19,7 +20,7 @@ class Backtracking:
   def __init__(self):
     self.variable_to_domain = {}
     self.variable_to_legal_values = {}
-    self.solutions = []
+    self.solutions = [] # list of possible assignments
     self.assignments = {}
     self.constraint_function = None
     self.binary_contraints = []
@@ -40,25 +41,24 @@ class Backtracking:
     self.constraint_function = lambda_func
     self.binary_contraints = list(combinations(list(self.variable_to_domain.keys()), 2))
   
-  def get_solution(self, morning_preference = None, packed_preference = None):
+  def get_solution(self, fitness_functions=[]):
     if self.solutions == []:
       self.get_solution_helper()
-    time_preference = 0
-    density_preference = 0
-    if morning_preference == True:
-      time_preference = 1
-    if morning_preference == False:
-      time_preference = -1
-    if packed_preference == True:
-      density_preference = 1
-    if packed_preference == False:
-      density_preference = -1
-    key_for_sort = lambda e: \
-        time_preference*FitnessFunction.time_of_day(e) + \
-        density_preference*FitnessFunction.density_of_day(e)
-    
-    sorted_by_preference = sorted(self.solutions, key=key_for_sort)
-    return sorted_by_preference[0] if len(sorted_by_preference) > 0 else None
+    final_fitness_values = [0 for _ in range(len(self.solutions))]
+    for fitness_function in fitness_functions:
+      current_fitness_values = []
+      for assignment in self.solutions:
+        current_fitness_values.append(fitness_function(assignment))
+      max_value = max(current_fitness_values)
+      min_value = min(current_fitness_values)
+      current_fitness_values = map(lambda e: (e-min_value)/(max_value-min_value) if max_value-min_value!=0 else 0, current_fitness_values)
+      final_fitness_values = [x + y for x, y in zip(final_fitness_values, current_fitness_values)]
+    sorted_by_preference = sorted(
+      [(final_fitness_values[i], self.solutions[i]) for i in range(len(self.solutions))], 
+      key=lambda e: e[0], reverse=True
+    )
+
+    return sorted_by_preference[0][1] if len(sorted_by_preference) > 0 else None
 
   def get_solutions(self):
     if self.solutions == []:
@@ -110,7 +110,6 @@ class Backtracking:
     '''
     return most constrained unassigned variable
     '''
-
     sort_by_least_legal_value = sorted(
       [(variable, values) for variable, values in self.variable_to_legal_values.items() 
           if self.assignments[variable] == None], 
@@ -169,9 +168,14 @@ class FitnessFunction:
   '''
   MIDDLE_VALUE_TIME_OF_DAY = 12
   NO_CLASS_DAY_WEIGHT = -30
-
+  
+  PREFER_MORNING_CLASS = lambda e: -1*FitnessFunction._time_of_day(e)
+  PREFER_EVENING_CLASS = lambda e: FitnessFunction._time_of_day(e)
+  PREFER_PACKED_SCHEDULE = lambda e: -1*FitnessFunction._density_of_day(e)
+  PREFER_SPREAD_SCHEDULE = lambda e: FitnessFunction._density_of_day(e)
+  
   @staticmethod
-  def time_of_day(class_schedule):
+  def _time_of_day(class_schedule):
     '''
     returns integer, more negative value indicates more classes held 
     in morning and vice versa for more positive value
@@ -184,7 +188,7 @@ class FitnessFunction:
     return fitness_value
 
   @staticmethod
-  def density_of_day(class_schedule):
+  def _density_of_day(class_schedule):
     '''
     returns integer, more negative value indicates class schedule 
     more packed and vice versa for more positive value
