@@ -41,7 +41,7 @@ class Backtracking:
     self.constraint_function = lambda_func
     self.binary_contraints = list(combinations(list(self.variable_to_domain.keys()), 2))
   
-  def get_solution(self, fitness_functions):
+  def get_solution(self, fitness_functions=[]):
     if self.solutions == []:
       self.get_solution_helper()
     final_fitness_values = [0 for _ in range(len(self.solutions))]
