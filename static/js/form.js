@@ -40,7 +40,7 @@ $(document).ready(function() {
 
   $('form#course-form').on("submit", function(event) {
     event.preventDefault();
-    $("html, body").animate({ scrollTop: 0 }, "slow");
+    $("html, body").animate({ scrollTop: $('.navbar').height() }, "slow");
     getCalendar().removeAllEvents();
     clearSelectedClass();
 
@@ -72,11 +72,9 @@ $(document).ready(function() {
       },
       success: function(result){
         if (!result.data.solution_found) {
-            // $( ".alert-box.failure" ).fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
           notifyFailure()
           return
         }
-        // $('.alert-box.success').fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
         notifySuccess()
         addEventsToCalendar(result)
         var contentAdded = '';
