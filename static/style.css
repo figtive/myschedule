@@ -9498,6 +9498,22 @@ input[type=checkbox]:checked:disabled + label:before {
   border-bottom-left-radius: 6px;
   border-bottom-right-radius: 6px; }
 
+.navbar {
+  border-bottom: 1px solid black;
+  height: 4rem; }
+  .navbar .navbar-item img {
+    height: 3rem;
+    max-height: none; }
+  .navbar .navbar-item a {
+    display: flex;
+    align-items: center;
+    color: inherit !important;
+    border: 1px solid transparent;
+    padding-right: 1rem; }
+    .navbar .navbar-item a:hover {
+      border: 1px solid black;
+      transition: border 0.5s linear; }
+
 .tab-selection {
   max-height: 50rem;
   overflow-y: auto; }
