@@ -27,11 +27,9 @@ dev:
     - apt-get install -y nodejs
     - apt-get install -y npm
     - npm install
-    - ls
     - npm run build
-    - ls
     - gem install dpl
-    - dpl --provider=heroku --app=$HEROKU_APP_NAME_DEV --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_DEV --api-key=$HEROKU_API_KEY --skip_cleanup
   artifacts:
     paths:
       - static/dist/
@@ -51,11 +49,9 @@ production:
     - apt-get install -y nodejs
     - apt-get install -y npm
     - npm install
-    - ls
     - npm run build
-    - ls
     - gem install dpl
-    - dpl --provider=heroku --app=$HEROKU_APP_NAME_PRODUCTION --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_PRODUCTION --api-key=$HEROKU_API_KEY --skip_cleanup
   artifacts:
     paths:
       - static/dist/
