@@ -20,7 +20,7 @@ dev:
   environment:
     name: dev
     url: $DEV_URL
-  before-script:
+  before_script:
     - apt-get update
     - apt-get install -y curl
     - curl -sL https://deb.nodesource.com/setup_6.x | bash -
@@ -40,7 +40,7 @@ production:
   environment:
     name: production
     url: $PRODUCTION_URL
-  before-script:
+  before_script:
     - apt-get update
     - apt-get install -y curl
     - curl -sL https://deb.nodesource.com/setup_6.x | bash -
