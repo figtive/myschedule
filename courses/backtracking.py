@@ -6,16 +6,11 @@ django.setup()
 from itertools import combinations
 import copy
 from datetime import time
-# from courses.models import Meeting
 from courses.models import *
 
 class Backtracking:
   '''
   represents a CSP problem solved with backtracking search
-
-  TODO:
-  - update constraint upon add_variable
-  - add argument type checking
   '''
   def __init__(self):
     self.variable_to_domain = {}
@@ -134,8 +129,6 @@ class Backtracking:
     '''
     return true if current assignment breaks any of complete 
     binary constraints, return false otherwise
-
-    TODO: implement binary_constraints as generator
     '''
     for var1, var2 in self.binary_contraints:
       if self.assignments[var1] and self.assignments[var2] and \
