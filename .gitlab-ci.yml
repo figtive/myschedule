@@ -1,6 +1,5 @@
 stages:
   - test
-  - npm
   - dev
   - production
 
@@ -15,22 +14,20 @@ coverage:
     - coverage report -m
   coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
 
-npm:
-  image: node:6
-  stage: npm
-  script:
-    - npm install
-    - npm run build
-  only:
-    - dev
-    - master
-
 dev:
   image: ruby:2.6
   stage: dev
   environment:
     name: dev
     url: $DEV_URL
+  before-script:
+    - apt-get update
+    - apt-get install -y curl
+    - curl -sL https://deb.nodesource.com/setup_6.x | bash -
+    - apt-get install -y nodejs
+    - apt-get install -y npm
+    - npm install
+    - npm run build
   script:
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME_DEV --api-key=$HEROKU_API_KEY
@@ -43,6 +40,14 @@ production:
   environment:
     name: production
     url: $PRODUCTION_URL
+  before-script:
+    - apt-get update
+    - apt-get install -y curl
+    - curl -sL https://deb.nodesource.com/setup_6.x | bash -
+    - apt-get install -y nodejs
+    - apt-get install -y npm
+    - npm install
+    - npm run build
   script:
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME_PRODUCTION --api-key=$HEROKU_API_KEY
