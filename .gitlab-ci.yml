@@ -31,6 +31,9 @@ dev:
   script:
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME_DEV --api-key=$HEROKU_API_KEY
+  artifacts:
+    paths:
+      - static/dist/
   only:
     - dev
 
@@ -51,5 +54,8 @@ production:
   script:
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME_PRODUCTION --api-key=$HEROKU_API_KEY
+  artifacts:
+    paths:
+      - static/dist/
   only:
     - master
