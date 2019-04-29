@@ -5,13 +5,13 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>{% block title %}{% endblock %}</title>
-        <link href="{% static 'style.css' %}" rel="stylesheet">
+        <link href="{% static 'dist/style.css' %}" rel="stylesheet">
         {% block css %}{% endblock %}
     </head>
     <body>
         {% include '_navbar.html' %}
         {% block content %}{% endblock %}
-        <script src="{% static 'script.js' %}"></script> 
+        <script src="{% static 'dist/script.js' %}"></script> 
         {% block js %}{% endblock %}
     </body>
 </html>
