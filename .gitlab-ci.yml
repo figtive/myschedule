@@ -1,5 +1,6 @@
 stages:
   - test
+  - npm
   - dev
   - production
 
@@ -13,6 +14,16 @@ coverage:
     - coverage run --source='courses' manage.py test
     - coverage report -m
   coverage: '/TOTAL.+ ([0-9]{1,3}%)/'
+
+npm:
+  image: node:6
+  stage: npm
+  script:
+    - npm install
+    - npm run 
+  only:
+    - dev
+    - master
 
 dev:
   image: ruby:2.6
