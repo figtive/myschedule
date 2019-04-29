@@ -20,15 +20,16 @@ dev:
   environment:
     name: dev
     url: $DEV_URL
-  before_script:
+  script:
     - apt-get update
     - apt-get install -y curl
     - curl -sL https://deb.nodesource.com/setup_6.x | bash -
     - apt-get install -y nodejs
     - apt-get install -y npm
     - npm install
+    - ls
     - npm run build
-  script:
+    - ls
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME_DEV --api-key=$HEROKU_API_KEY
   artifacts:
@@ -43,15 +44,16 @@ production:
   environment:
     name: production
     url: $PRODUCTION_URL
-  before_script:
+  script:
     - apt-get update
     - apt-get install -y curl
     - curl -sL https://deb.nodesource.com/setup_6.x | bash -
     - apt-get install -y nodejs
     - apt-get install -y npm
     - npm install
+    - ls
     - npm run build
-  script:
+    - ls
     - gem install dpl
     - dpl --provider=heroku --app=$HEROKU_APP_NAME_PRODUCTION --api-key=$HEROKU_API_KEY
   artifacts:
