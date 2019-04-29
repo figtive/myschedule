@@ -20,7 +20,7 @@ npm:
   stage: npm
   script:
     - npm install
-    - npm run 
+    - npm run build
   only:
     - dev
     - master
