@@ -57,6 +57,10 @@ $(document).ready(function() {
       return obj
     }, {});
 
+    if (!('check' in data)) {
+      data['check'] = []
+    }
+
     const submitButton = $('button#course-form-submit');
     submitButton.prop('disabled', true);
 
