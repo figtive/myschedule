@@ -4,6 +4,10 @@
 
 #calendar {
   min-width: 769px;
+
+  table, th, td {
+    border-color: $calendar-border-color;
+  }
   
   td {
     height: 1.75em;
@@ -16,7 +20,8 @@
   }
 
   .fc-event {
-    background-color: #5998d6;
+    background-color: $calendar-event-background-color;
+    border-color: $calendar-event-background-color;
   }
 }
 

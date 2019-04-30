@@ -5,10 +5,6 @@
     }
 }
 
-.modal-card-head {
-    background-color: #5998d6; 
-}
-
 .modal-card-body {
     border: 1px solid black;
     border-top: none;
@@ -17,7 +13,6 @@
 }
 
 .navbar {
-    border-bottom: 1px solid black;
     height: 4rem;
     
     .navbar-item img {
@@ -28,13 +23,26 @@
     .navbar-item a {
         display: flex;
         align-items: center;
-        color: inherit !important;
+        color: inherit;
         border: 1px solid transparent;
         padding-right: 1rem;
 
         &:hover {
-            border: 1px solid black;
-            transition: border 0.5s linear;
+            border: 1px solid $link-hover;
+            color: $link-hover;
+            transition: border 0.2s linear;
         }
     }
+
+    .navbar-brand .title {
+        color: $navbar-brand-color;
+
+        &:hover {
+            color: $link-hover;
+        }
+    }
+}
+
+.select:not(.is-multiple):not(.is-loading):hover::after {
+    border-color: $link-hover;
 }

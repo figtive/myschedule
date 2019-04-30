@@ -11,20 +11,12 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
-        include: [
-          path.join(__dirname, "static/css"), 
-          path.join(__dirname, "node_modules")
-        ],
         use: {
           loader: "babel-loader"
         }
       },
       {
         test: /(\.scss$)|(\.css$)/,
-        include: [
-          path.join(__dirname, "static/css"), 
-          path.join(__dirname, "node_modules")
-        ],
         use: [
           "style-loader",
           MiniCssExtractPlugin.loader,
