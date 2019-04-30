@@ -10,3 +10,20 @@
 .padding-small {
     padding: 0.5rem;
 }
+
+.landing-image {
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-end;
+
+    @media screen and (max-width: $tablet) {
+        align-items: flex-start;
+      }
+}
+
+.landing-text {
+    display: flex;margin-left: 1rem; 
+    flex-direction: column; 
+    height: 100%;
+    justify-content: center;
+}
