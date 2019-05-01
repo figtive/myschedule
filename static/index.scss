@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700');
+
+// brand colors
+$blue: #124e78;
+$white: #e6e6ea;
+$dark-grey: #303030;
+$yellow: #F7C600;
+$orange: #F7944F;
+$grey: #CCCECA;
+$green: #26C485;
+$red: #EF5B5B;
+
+// update bulma global variables
+$primary: $blue;
+$link: $yellow;
+$border: $dark-grey;
+$success: $green;
+$danger: $red;
+$text: $dark-grey;
+$family-sans-serif: "Nunito", sans-serif;
+$body-background-color: $white;
+
+$link-hover: $orange;
+$link-active: $grey;
+
+$navbar-background-color: $blue;
+$navbar-item-color: $yellow;
+$navbar-brand-color: $yellow;
+
+$button-background-color: $blue;
+$button-color: $yellow;
+
+$tabs-link-hover-color: $orange;
+$tabs-link-hover-border-bottom-color: $orange;
+
+$checkbox-background-color: $yellow;
+
+$calendar-event-background-color: $yellow;
+$calendar-event-border-color: $orange;
+$calendar-border-color: $grey;
+
+// bulma css framework
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/_all.sass";
+@import "../node_modules/bulma/sass/components/_all.sass";
+@import "../node_modules/bulma/sass/layout/_all.sass";
+@import "../node_modules/bulma/sass/grid/_all.sass";
+
+// css for calendar
+@import "../node_modules/@fullcalendar/core/main.css";
+@import "../node_modules/@fullcalendar/daygrid/main.css";
+@import "../node_modules/@fullcalendar/timegrid/main.css";
+
+// custom css
+@import "./css/calendar.scss";
+@import "./css/checkbox.scss";
+@import "./css/bulma-overwrite.scss";
+@import "./css/custom.scss";
+@import "./css/check-cross.scss";
+@import "./css/alert-box.scss";

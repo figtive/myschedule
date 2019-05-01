@@ -6,16 +6,11 @@ django.setup()
 from itertools import combinations
 import copy
 from datetime import time
-# from courses.models import Meeting
 from courses.models import *
 
 class Backtracking:
   '''
   represents a CSP problem solved with backtracking search
-
-  TODO:
-  - update constraint upon add_variable
-  - add argument type checking
   '''
   def __init__(self):
     self.variable_to_domain = {}
@@ -45,14 +40,17 @@ class Backtracking:
     if self.solutions == []:
       self.get_solution_helper()
     final_fitness_values = [0 for _ in range(len(self.solutions))]
-    for fitness_function in fitness_functions:
-      current_fitness_values = []
-      for assignment in self.solutions:
-        current_fitness_values.append(fitness_function(assignment))
-      max_value = max(current_fitness_values)
-      min_value = min(current_fitness_values)
-      current_fitness_values = map(lambda e: (e-min_value)/(max_value-min_value) if max_value-min_value!=0 else 0, current_fitness_values)
-      final_fitness_values = [x + y for x, y in zip(final_fitness_values, current_fitness_values)]
+    
+    if self.solutions:
+      for fitness_function in fitness_functions:
+        current_fitness_values = []
+        for assignment in self.solutions:
+          current_fitness_values.append(fitness_function(assignment))
+        max_value = max(current_fitness_values)
+        min_value = min(current_fitness_values)
+        current_fitness_values = map(lambda e: (e-min_value)/(max_value-min_value) if max_value-min_value!=0 else 0, current_fitness_values)
+        final_fitness_values = [x + y for x, y in zip(final_fitness_values, current_fitness_values)]
+    
     sorted_by_preference = sorted(
       [(final_fitness_values[i], self.solutions[i]) for i in range(len(self.solutions))], 
       key=lambda e: e[0], reverse=True
@@ -134,8 +132,6 @@ class Backtracking:
     '''
     return true if current assignment breaks any of complete 
     binary constraints, return false otherwise
-
-    TODO: implement binary_constraints as generator
     '''
     for var1, var2 in self.binary_contraints:
       if self.assignments[var1] and self.assignments[var2] and \

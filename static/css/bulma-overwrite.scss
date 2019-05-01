@@ -5,13 +5,44 @@
     }
 }
 
-.modal-card-head {
-    background-color: #5998d6; 
-}
-
 .modal-card-body {
     border: 1px solid black;
     border-top: none;
     border-bottom-left-radius: 6px;
     border-bottom-right-radius: 6px;
+}
+
+.navbar {
+    height: 4rem;
+    
+    .navbar-item img {
+        height: 3rem;
+        max-height: none; 
+    }
+
+    .navbar-item a {
+        display: flex;
+        align-items: center;
+        color: inherit;
+        border: 1px solid transparent;
+        padding-right: 1rem;
+
+        &:hover {
+            border: 1px solid $link-hover;
+            color: $link-hover;
+            transition: border 0.2s linear;
+        }
+    }
+
+    .navbar-brand .title {
+        color: $navbar-brand-color;
+
+        &:hover {
+            color: $link-hover;
+        }
+    }
+}
+
+.select:not(.is-multiple):not(.is-loading):hover::after {
+    border-color: $link-hover;
 }

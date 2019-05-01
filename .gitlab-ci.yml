@@ -21,8 +21,18 @@ dev:
     name: dev
     url: $DEV_URL
   script:
+    - apt-get update
+    - apt-get install -y curl
+    - curl -sL https://deb.nodesource.com/setup_6.x | bash -
+    - apt-get install -y nodejs
+    - apt-get install -y npm
+    - npm install
+    - npm run build
     - gem install dpl
-    - dpl --provider=heroku --app=$HEROKU_APP_NAME_DEV --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_DEV --api-key=$HEROKU_API_KEY --skip_cleanup
+  artifacts:
+    paths:
+      - static/dist/
   only:
     - dev
 
@@ -33,7 +43,17 @@ production:
     name: production
     url: $PRODUCTION_URL
   script:
+    - apt-get update
+    - apt-get install -y curl
+    - curl -sL https://deb.nodesource.com/setup_6.x | bash -
+    - apt-get install -y nodejs
+    - apt-get install -y npm
+    - npm install
+    - npm run build
     - gem install dpl
-    - dpl --provider=heroku --app=$HEROKU_APP_NAME_PRODUCTION --api-key=$HEROKU_API_KEY
+    - dpl --provider=heroku --app=$HEROKU_APP_NAME_PRODUCTION --api-key=$HEROKU_API_KEY --skip_cleanup
+  artifacts:
+    paths:
+      - static/dist/
   only:
     - master

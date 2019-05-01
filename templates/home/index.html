@@ -7,12 +7,27 @@
 <section class="hero is-fullheight">
   <div class="hero-body">
     <div class="container">
-      <h1 class="title">
-        MySchedule
-      </h1>
-      <h2 class="subtitle">
-          <a href="{% url 'courses:courses_index' %}">start arranging your schedule now</a>
-      </h2>
+      <!-- <div class="is-flex" style="flex-direction: row; align-items: center;"> -->
+      <div class="columns">
+        <div class="column is-5">
+          <div class="landing-image">
+              <img src="{% static 'img/undraw_calendar_dutt.svg' %}" width="300px">
+          </div>
+        </div>
+        <div class="column is-7">
+            <div class="landing-text">
+                <h1 class="title">
+                  MySchedule
+                </h1>
+                <h2 class="subtitle">
+                    <a href="{% url 'courses:courses_index' %}">start arranging your schedule now</a>
+                </h2>
+              </div>
+        </div>
+      </div>
+        
+        
+      <!-- </div> -->
     </div>
   </div>
 </section>
