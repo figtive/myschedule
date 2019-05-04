@@ -163,7 +163,7 @@ class FitnessFunction:
   based on preference, prefernce include morning/evening class, tight/spread schedule
   '''
   MIDDLE_VALUE_TIME_OF_DAY = 12
-  NO_CLASS_DAY_WEIGHT = -30
+  NO_CLASS_DAY_WEIGHT = -100
   
   PREFER_MORNING_CLASS = lambda e: -1*FitnessFunction._time_of_day(e)
   PREFER_EVENING_CLASS = lambda e: FitnessFunction._time_of_day(e)
